@@ -1,0 +1,400 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* ── Typography: Host Grotesk Bold for headings ── */
+h1, h2, .dd-hero-h1 {
+  font-family: var(--font-display), "Arial Black", sans-serif;
+  font-weight: 700;
+}
+
+/* ── Selection ── */
+::selection {
+  background: #e6ff99;
+  color: #000000;
+}
+
+/* ── Scrollbar (webkit) ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #537f7b; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3d5f5c; }
+
+/* ── Grain texture overlay (shared SVG) ── */
+:root {
+  --dd-grain-svg: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.4'/%3E%3C/svg%3E");
+}
+.dd-grain, .dd-grain-subtle { position: relative; }
+.dd-grain > *, .dd-grain-subtle > * { position: relative; z-index: 1; }
+.dd-grain::after, .dd-grain-subtle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--dd-grain-svg);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+.dd-grain::after { opacity: 0.35; }
+.dd-grain-subtle::after { opacity: 0.18; }
+
+/* ── Link opacity hover ── */
+.dd-link-hover { transition: opacity 0.2s ease; }
+.dd-link-hover:hover { opacity: 0.6; }
+
+/* ── Arrow hover animation ── */
+.dd-arrow-link { display: inline-flex; align-items: center; gap: 4px; }
+.dd-arrow-link .dd-arrow { transition: transform 0.3s cubic-bezier(.22,1,.36,1); display: inline-block; }
+.dd-arrow-link:hover .dd-arrow { transform: translateX(5px); }
+
+/* ── Footer link hover ── */
+.dd-footer-link { transition: color 0.25s ease; }
+.dd-footer-link:hover { color: #537f7b !important; }
+
+/* ── Nav link hover underline ── */
+.dd-nav-link {
+  position: relative;
+}
+.dd-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #000000;
+  transition: width 0.3s cubic-bezier(.22,1,.36,1);
+}
+.dd-nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Button wipe fill ── */
+.dd-btn-wipe {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.dd-btn-wipe::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #000000;
+  transition: width 0.35s cubic-bezier(.22,1,.36,1);
+  z-index: -1;
+}
+.dd-btn-wipe:hover::before {
+  width: 100%;
+}
+.dd-btn-wipe:hover {
+  color: #ffffff !important;
+}
+
+/* ── Nav dropdown link hover ── */
+.dd-nav-dropdown-link { transition: background 0.2s ease; }
+.dd-nav-dropdown-link:hover { background: #f5f5f5 !important; }
+
+/* ── Job card hover lift ── */
+.dd-job-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.dd-job-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.05); }
+
+/* ── Generic card hover lift ── */
+.dd-hover-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.dd-hover-lift:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+
+/* ── Testimonial spotlight photo ── */
+.dd-spotlight-photo {
+  filter: grayscale(100%);
+  transition: filter 0.7s ease;
+}
+.dd-spotlight-photo:hover {
+  filter: grayscale(0%);
+}
+
+/* ── Team portrait gallery ── */
+.dd-portrait-card .dd-portrait-img {
+  transition: transform 0.5s ease;
+}
+.dd-portrait-card:hover .dd-portrait-img {
+  transform: scale(1.03);
+}
+.dd-portrait-card .dd-portrait-linkedin {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease, color 0.25s ease;
+}
+.dd-portrait-card:hover .dd-portrait-linkedin {
+  opacity: 1;
+  transform: translateY(0);
+}
+.dd-portrait-card .dd-portrait-linkedin:hover {
+  background: #0077b5 !important;
+  color: #ffffff !important;
+}
+
+/* ── Responsive Breakpoint: 900px ── */
+@media (max-width: 900px) {
+  /* Navigation */
+  .dd-nav-desktop { display: none !important; }
+  .dd-nav-hamburger { display: block !important; }
+  .dd-nav-mobile { display: flex !important; }
+
+  /* Hero */
+  .dd-hero-h1 { font-size: 40px !important; }
+  .dd-hero-split { flex-direction: column !important; }
+
+  /* Grids that collapse to 1 column */
+  .dd-solutions-grid,
+  .dd-delivery-grid,
+  .dd-testimonials-grid,
+  .dd-why-grid,
+  .dd-tools-grid,
+  .dd-accel-grid,
+  .dd-challenge-grid,
+  .dd-proof-grid,
+  .dd-deliverables-layout,
+  .dd-deliverables-grid,
+  .dd-steps-grid,
+  .dd-tools-row,
+  .dd-offices-grid,
+  .dd-partners-grid,
+  .dd-offerings-grid,
+  .dd-insights-grid { grid-template-columns: 1fr !important; }
+
+  /* Path timeline: vertical on mobile */
+  .dd-path-timeline { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .dd-path-timeline > div { flex-direction: row !important; align-items: flex-start !important; }
+  .dd-path-timeline > div > div:first-child { margin-bottom: 0 !important; margin-right: 16px !important; flex-shrink: 0 !important; }
+  .dd-path-line { display: none !important; }
+  .dd-featured-story { flex-direction: column !important; }
+  .dd-featured-story > div { width: 100% !important; }
+  .dd-stories-masonry { column-count: 1 !important; }
+  .dd-bento-row { flex-direction: column !important; }
+  .dd-spotlight-row { flex-direction: column !important; }
+  .dd-spotlight-photo-col { width: 100% !important; }
+  .dd-solution-interactive { flex-direction: column !important; }
+  .dd-bento-extras { flex-direction: column !important; }
+  .dd-insight-featured { flex-direction: column !important; }
+  .dd-insight-featured-img { width: 100% !important; min-height: 220px !important; }
+
+  /* Grids that collapse to 2 columns */
+  .dd-stats-grid,
+  .dd-team-grid { grid-template-columns: 1fr 1fr !important; }
+  .dd-how-grid { grid-template-columns: 1fr !important; }
+
+  /* Flex layouts */
+  .dd-clients-row { flex-wrap: wrap !important; }
+  .dd-cta-row { flex-direction: column !important; }
+  .dd-cta-left { padding: 48px 32px !important; }
+
+  /* Footer */
+  .dd-footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+
+  /* Journey timeline: stack on mobile */
+  .dd-journey-phases { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+}
+
+@keyframes ddFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Experimentation page: Animated grain drift ── */
+.dd-grain-drift { position: relative; }
+.dd-grain-drift > * { position: relative; z-index: 1; }
+.dd-grain-drift::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--dd-grain-svg);
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  mix-blend-mode: multiply;
+  opacity: 0.3;
+  z-index: 0;
+  animation: ddGrainDrift 8s linear infinite;
+}
+
+@keyframes ddGrainDrift {
+  0% { background-position: 0 0; }
+  100% { background-position: 200px 200px; }
+}
+
+/* ── Logo marquee ── */
+@keyframes ddMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes ddMarqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.dd-marquee-row:hover .dd-marquee-track {
+  animation-play-state: paused;
+}
+
+/* ── CTA float animation ── */
+@keyframes ddFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.dd-float {
+  animation: ddFloat 4s ease-in-out infinite;
+}
+
+/* ── Experimentation: card tilt hover ── */
+.dd-card-tilt {
+  transition: transform 0.4s cubic-bezier(.22,1,.36,1), box-shadow 0.4s ease;
+}
+.dd-card-tilt:hover {
+  box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+}
+
+/* ── Experimentation: portrait desaturate-to-color ── */
+.dd-portrait-reveal .dd-portrait-img {
+  filter: grayscale(60%);
+  transform: scale(1.08);
+  transition: filter 0.8s ease, transform 0.8s ease;
+}
+.dd-portrait-reveal.in-view .dd-portrait-img {
+  filter: grayscale(0%);
+  transform: scale(1);
+}
+
+/* ── Experimentation: responsive overrides ── */
+@media (max-width: 900px) {
+  .dd-exp-portrait-grid { grid-template-columns: 1fr !important; }
+  .dd-exp-portrait-grid > div { margin-left: 0 !important; }
+  .dd-exp-header-split { flex-direction: column !important; gap: 8px !important; }
+  .dd-exp-why-grid { grid-template-columns: 1fr !important; }
+  .dd-exp-why-grid > div { margin-left: 0 !important; margin-right: 0 !important; transform: none !important; }
+  /* dev_services: maturity cards stack */
+  .dd-dev-maturity-card { flex-direction: column !important; }
+  .dd-dev-maturity-card > div:first-child { width: 100% !important; height: 60px !important; }
+  /* dev_services: journey phases */
+  .dd-dev-journey-phase { gap: 16px !important; }
+  /* dev_solutions: hero split */
+  .dd-dev-sol-hero { flex-direction: column !important; }
+  /* dev_solutions: section headers */
+  .dd-dev-sol-section-header { flex-direction: column !important; gap: 8px !important; }
+  /* dev_solutions: card grids */
+  .dd-dev-sol-grid { grid-template-columns: 1fr !important; }
+  .dd-dev-sol-grid > div { margin-top: 0 !important; }
+  /* Article layout: sidebar stacks below on mobile */
+  .dd-article-layout { flex-direction: column !important; }
+  .dd-article-sidebar { width: 100% !important; position: static !important; }
+  /* Article: thrive grid on careers */
+  .dd-thrive-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .dd-benefits-grid { grid-template-columns: 1fr !important; }
+  .dd-details-grid { grid-template-columns: 1fr !important; }
+  /* dev_customer-stories */
+  .dd-dev-cs-featured { flex-direction: column !important; }
+  .dd-dev-cs-featured > div:first-child { width: 100% !important; min-height: 200px !important; }
+  .dd-dev-cs-masonry { column-count: 1 !important; }
+  .dd-dev-cs-quotes { grid-template-columns: 1fr !important; }
+  .dd-dev-cs-team { grid-template-columns: 1fr !important; }
+}
+
+@media (min-width: 901px) {
+  .dd-nav-mobile { display: none !important; }
+}
+
+/* ══════════════════════════════════════════════
+   Editorial Article Styles
+   ══════════════════════════════════════════════ */
+
+/* ── Reading progress bar ── */
+.dd-reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: #537f7b;
+  z-index: 9999;
+  transition: width 0.1s linear;
+  will-change: width;
+}
+
+/* ── Drop cap ── */
+.dd-article-body .dd-drop-cap::first-letter {
+  float: left;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 4.2em;
+  line-height: 0.8;
+  padding-right: 12px;
+  padding-top: 6px;
+  color: #000000;
+  font-weight: 400;
+}
+
+/* ── Article serif headings ── */
+.dd-article-serif {
+  font-family: var(--font-serif), Georgia, serif !important;
+  font-weight: 400 !important;
+}
+
+/* ── Pull quote decorative marks ── */
+.dd-pullquote-mark {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 72px;
+  line-height: 1;
+  color: #537f7b;
+  opacity: 0.25;
+  user-select: none;
+  position: absolute;
+}
+
+/* ── Subtle divider between Q&A sections ── */
+.dd-article-divider {
+  width: 48px;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 40px 0;
+}
+
+/* ── Article image hover reveal ── */
+.dd-article-hero-img {
+  transition: transform 0.8s cubic-bezier(.22,1,.36,1);
+}
+.dd-article-hero-img:hover {
+  transform: scale(1.015);
+}
+
+/* ── Author card hover ── */
+.dd-author-card {
+  transition: box-shadow 0.4s ease;
+}
+.dd-author-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+
+/* ── Sidebar key takeaways refined ── */
+.dd-sidebar-takeaways {
+  border-left: 3px solid #537f7b;
+  transition: transform 0.3s ease;
+}
+
+/* ── Tag pill hover ── */
+.dd-tag-pill {
+  transition: background 0.25s ease, color 0.25s ease;
+  cursor: default;
+}
+.dd-tag-pill:hover {
+  background: #537f7b !important;
+  color: #ffffff !important;
+}
+
+/* ── Related card image zoom ── */
+.dd-related-card-img {
+  transition: transform 0.6s cubic-bezier(.22,1,.36,1);
+}
+.dd-related-card-img:hover {
+  transform: scale(1.04);
+}
