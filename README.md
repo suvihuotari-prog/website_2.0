@@ -2,8 +2,6 @@
 
 Marketing website for **Data Design Oy** — a Finnish AI advisory & implementation agency. The site is structured around client problems ("here's what you're struggling with") rather than capabilities, and is built as a [Next.js](https://nextjs.org) App Router project.
 
-> **Live design conventions, brand tokens, copy voice, and client proof points live in [CLAUDE.md](CLAUDE.md).** Read it before changing content or styling.
-
 ## Tech stack
 
 - **Next.js 15** (App Router) + **React 19**
@@ -37,21 +35,18 @@ npm run start    # serve the production build
 
 ```
 .
-├── CLAUDE.md                 # Project guide: brand, voice, proof points, design patterns
 ├── README.md                 # You are here
 ├── dd-website/               # The Next.js app (deployable — Vercel Root Directory)
 │   ├── src/
 │   │   ├── app/              # App Router pages incl. /fi mirror, sitemap.js, robots.js
-│   │   ├── components/       # ~25 shared components (Navbar, Footer, cards, Reveal…)
-│   │   ├── lib/              # tokens.js (brand), mdx.js (content loader), seo.js, translations.js
+│   │   ├── components/       # Shared components (Navbar, Footer, cards, Reveal…)
+│   │   ├── lib/              # tokens.js (brand), mdx.js (content loader), translations.js
 │   │   ├── i18n/             # next-intl config
 │   │   └── middleware.js     # i18n middleware (currently inactive placeholder)
 │   ├── content/              # Bilingual MDX: cases/*.{en,fi}.mdx, insights/*.{en,fi}.mdx
 │   ├── messages/             # next-intl UI strings (en, fi)
 │   ├── public/images/        # Logos, people photos, illustrations
-│   ├── next.config.js        # Webflow → new 301 redirects
-│   └── docs/                 # In-app planning docs (design upgrade, refactoring)
-├── docs/                     # Copy & reference docs (services copy, copy rules, design skill)
+│   └── next.config.js        # Webflow → new 301 redirects
 └── *.jsx                     # Original standalone prototypes — see note below
 ```
 
