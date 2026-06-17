@@ -1,0 +1,69 @@
+---
+slug: making-data-speak-your-language
+locale: en
+title: "Making Business Data Speak Your Language"
+subtitle: "Gaurav Khullar sheds light on how to talk with databases in natural language."
+category: "Expert Talk"
+readTime: "3 min read"
+author: "Gaurav Khullar"
+authorRole: "Partner"
+authorPhoto: "/images/people/GauravKhullar.jpg"
+image: "/images/people/GauravKhullar_wide.jpg"
+tags:
+  - "Text-to-SQL"
+  - "GenAI"
+  - "Agentic AI"
+  - "Production"
+keyTakeaways:
+  - "Getting a Text-to-SQL agent to 70-80% accuracy is fast. Moving from that to enterprise-grade 90%+ is the real work"
+  - "Role-based access + client's own cloud environment + choice of LLM made the solution actually deployable in a regulated business"
+  - "Managing expectations matters. Early success can create unrealistic hopes about how quickly the long tail gets solved"
+  - "Agent-based projects need new ways of working. The tooling didn't exist yet, so we built our own internal tools"
+---
+<ArticleLead>
+Can you really ask a database questions in plain English and get secure, permission-appropriate answers instantly? That's exactly what one of our recent projects set out to prove.
+</ArticleLead>
+
+We sat down with Gaurav Khullar to discuss a Text-to-SQL project that lets anyone query databases using natural language. Like having a conversation with your company's best data and business expert.
+
+## Who are you and what do you do?
+I’m [Gaurav Khullar](https://www.linkedin.com/in/gaurav-khullar-4b76862), a partner at Data Design. My career at Data Design started in AI advisory, later expanded into AI and generative AI implementations, and now I'm also focused on growing our India business.
+
+## You have extensive experience in utilizing machine learning and AI. Is there a particular project that has stuck with you?
+I've worked on many machine learning projects and now with generative AI. One that really stuck with me is a Text-to-SQL solution we recently delivered for a client.
+
+## Why?
+It stands out for two reasons. First, the impact: for the first time, our client's end users could simply have conversations with structured data, even with databases containing billions of rows and complex table structures.
+
+Second, the technology: we used cutting-edge agent-based AI methods. This made the work both challenging and rewarding.
+
+## What was the project about?
+We solved an accessibility problem. Business users wanted answers from data without SQL knowledge or waiting for reports.
+
+## What kind of solution did you end up with?
+We built a chatbot-style interface where users can ask questions in English or Finnish. The system translates them into SQL queries, runs them against various databases, and returns results both visually and in natural language.
+
+The chatbot remembers conversation history, so users can ask follow-up questions naturally. We also added role-based access control to ensure people only see data they're authorized to access.
+
+For security, everything runs in the client's own cloud environment. Their data never leaves their control. For flexibility, they can choose which language model to use, including open-source or custom fine-tuned internal models.
+
+## What was the reception like for the solution?
+The response was positive. Starting agent-based AI projects is really straightforward. You can build a proof of concept quickly and reach about 70-80% accuracy pretty soon.
+> The real challenge is moving from 70-80% toward 100%. That "long tail" is where the work and expertise live.
+In this project, we gained firsthand experience of what it takes to jump from a promising proof of concept to a production-ready enterprise solution. The client appreciated our transparency throughout the process and the extra effort we put in to reach the high 90% accuracy that enterprise customers expect.
+
+## What kinds of challenges arose in the project?
+Managing expectations was the biggest one. Early success can create unrealistic hopes. We had to be clear that polishing those final edge cases takes time and expertise.
+
+Another challenge was tooling. Many frameworks and platforms we'd want for this kind of work didn't exist yet. We had to build internal tools and adapt our processes to manage an environment where even small prompt changes could have major impacts on results.
+
+## Any other interesting observations?
+We had to adapt our processes too. This kind of project is highly agile and innovative, but also uncertain. Managing such an environment required us to change our working methods and design processes that could handle the unpredictability.
+> Innovation projects like this require not just new technology, but new ways of working.
+
+## Could the same solution concept be applied elsewhere?
+Absolutely. We've actually productized the solution. We now offer a more general self-service Text-to-SQL product where clients can set up their own environment and connect their database. The solution already supports multiple relational databases and can configure metadata descriptions, business rules, safeguards, and role-based access control.
+
+Once configured, end users can jump straight into the chat-based interface. We designed it to be as seamless as possible, running entirely in the client's own cloud or private cloud, without touching external systems if they prefer.
+
+## What was the

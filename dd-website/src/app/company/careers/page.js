@@ -11,7 +11,7 @@ const OPENINGS = [
     category: "Data & AI",
     type: "Part-time",
     locations: ["Espoo (Keilaniemi)", "Tampere", "Remote"],
-    description: "Join real client projects from day one. You'll work alongside senior practitioners on ML and GenAI solutions — learning by doing, not by watching.",
+    description: "Join real client projects from day one. You'll work alongside senior practitioners on ML and GenAI solutions. Learning by doing, not by watching.",
   },
   {
     title: "Senior Data Analyst",
@@ -30,8 +30,8 @@ export default function CareersPage() {
       <HeroSection
         gradient="lemon"
         badge="Careers"
-        title="Your work ships to production — not to a slide deck"
-        subtitle="Whether you're starting your AI career or looking for your next senior challenge, you'll own real projects with real clients. No bench time, no internal busywork — just meaningful work that makes a visible difference."
+        title="Your work ships to production. Not to a slide deck"
+        subtitle="Whether you're starting your AI career or looking for your next senior challenge, you'll own real projects with real clients. No bench time, no internal busywork. Just meaningful work that makes a visible difference."
         primaryButton={{ label: "See open positions", href: "#openings" }}
         secondaryButton={{ label: "Meet the team", href: "/company/about" }}
       />
@@ -53,17 +53,17 @@ export default function CareersPage() {
             {[
               {
                 title: "You own the outcome, not just a task",
-                body: "You're responsible for real client deliverables from the start. No shadow roles or observation periods — you contribute, you learn, you see the impact.",
+                body: "You're responsible for real client deliverables from the start. No shadow roles or observation periods. You contribute, you learn, you see the impact.",
                 accent: C.lemon,
               },
               {
                 title: "You learn from people who've done it",
-                body: "Your mentors have built AI at H&M, Silo AI, and Deloitte. Direct access to 20+ years of experience — no layers of management in between.",
+                body: "Your mentors have built AI at H&M, Silo AI, and Deloitte. Direct access to 20+ years of experience. No layers of management in between.",
                 accent: C.turquoise,
               },
               {
                 title: "You grow faster because every project is different",
-                body: "Retail, energy, banking, manufacturing — you solve fundamentally different problems across industries and AI maturity levels. No two quarters look the same.",
+                body: "Retail, energy, banking, manufacturing. You solve fundamentally different problems across industries and AI maturity levels. No two quarters look the same.",
                 accent: C.lemon,
               },
             ].map((item, i) => (
@@ -152,7 +152,7 @@ export default function CareersPage() {
       {/* CTA */}
       <CTASection
         heading="In 30 minutes, you'll know if we're the right fit"
-        subtitle="Whether you're exploring your next career move or curious about working with us — book a call and let's talk."
+        subtitle="Whether you're exploring your next career move or curious about working with us. Book a call and let's talk."
         secondaryLabel="Meet the team"
         secondaryHref="/company/about"
         image="/images/illustrations/DD-Illustration-1.png"

@@ -1,0 +1,83 @@
+---
+slug: making-data-speak-your-language
+locale: fi
+title: "Yritysdata vastaa arkikielellä liiketoimintaongelmiin"
+subtitle: "Gaurav Khullar kertoo, miten keskustella tietokantojen kanssa tavallisella kielellä."
+category: "Expert Talk"
+readTime: "3 min lukuaika"
+author: "Gaurav Khullar"
+authorRole: "Partner"
+authorPhoto: "/images/people/GauravKhullar.jpg"
+image: "/images/people/GauravKhullar_wide.jpg"
+keyTakeaways:
+  - "Text-to-SQL-agentin nostaminen 70–80 % tarkkuuteen on nopeaa. Siitä yritystason 90 %+ on todellinen työ"
+  - "Rooleihin perustuva pääsy ja asiakkaan oma pilvi ja valittavissa oleva LLM teki ratkaisusta käytännössä käyttöönotettavan säädellyssä liiketoiminnassa"
+  - "Odotusten hallinta on tärkeää. Alkumenestys voi luoda epärealistisia toiveita siitä kuinka nopeasti loppuosa ratkeaa"
+  - "Agenttipohjaiset projektit vaativat uusia työtapoja. Työkaluja ei ollut vielä olemassa, joten rakensimme omat sisäiset"
+---
+
+<ArticleLead>
+Voiko tietokannalta todella kysyä jotain tavallisella kielellä ja saada turvallisen sekä käyttöoikeuksien mukaisen vastauksen välittömästi? Juuri tästä oli kyse eräässä viimeaikaisista projekteistamme.
+</ArticleLead>
+
+Keskustelimme **Gaurav Khullarin** kanssa Text-to-SQL-projektista, jonka avulla kuka tahansa voi esittää tietokannoille kysymyksiä luonnollisella kielellä, aivan kuin puhuisi yrityksen parhaalle asiantuntijalle.
+
+## Tietokantojen kanssa jutteleminen luonnollisella kielellä
+
+### Kuka olet ja mitä teet?
+
+Olen [Gaurav Khullar](https://www.linkedin.com/in/gaurav-khullar-4b76862), osakas Data Designissa. Urani Data Designilla alkoi tekoälyneuvonannosta, laajeni myöhemmin koneoppimisen ja generatiivisen tekoälyn toteutuksiin, ja nykyään keskityn myös Intian liiketoimintamme kasvattamiseen.
+
+### Sinulla on laaja kokemus koneoppimisen ja tekoälyn käytöstä. Onko jokin projekti jäänyt erityisesti mieleen?
+
+Olen työskennellyt monissa koneoppimisprojekteissa ja nyt generatiivisen tekoälyn parissa. Yksi, joka erityisesti jäi mieleen, on Text-to-SQL-ratkaisu, jonka hiljattain teimme asiakkaalle.
+
+### Miksi juuri se?
+
+Se erottuu kahdesta syystä. Ensinnäkin vaikutus, sillä ensimmäistä kertaa asiakkaan loppukäyttäjät pystyivät yksinkertaisesti keskustelemaan strukturoidun datan kanssa, vaikka tietokannoissa olisi miljardeja rivejä ja monimutkaisia taulurakenteita.
+
+Toiseksi teknologia, koska käytimme uusimpia agenttipohjaisia tekoälymenetelmiä. Tämä teki työstä sekä haastavaa että palkitsevaa.
+
+### Mistä projektissa oli kyse?
+
+Ratkaisimme saavutettavuusongelman. Liiketoiminnan käyttäjät halusivat vastauksia datasta ilman SQL-osaamista tai raporttien odottelua.
+
+### Millaisen ratkaisun kehititte?
+
+Rakensimme chatbot-tyyppisen käyttöliittymän, jossa käyttäjät voivat kysyä kysymyksiä englanniksi tai suomeksi. Järjestelmä kääntää ne SQL-kyselyiksi, ajaa niitä eri tietokantoja vasten ja palauttaa tulokset sekä visuaalisesti että luonnollisella kielellä.
+
+Chatbot muistaa keskusteluhistorian, joten käyttäjät pystyvät esittämään jatkokysymyksiä luontevasti. Lisäsimme myös roolipohjaisen pääsynhallinnan, joka varmistaa, että ihmiset näkevät vain sen datan, johon heillä oli oikeus.
+
+Tietoturvan kannalta kaikki pyöri asiakkaan omassa pilviympäristössä ja data ei koskaan poistu heidän hallinnasta. Joustavuuden vuoksi voidaan myös valita mitä kielimallia käytetään. Myös avoimen lähdekoodin tai omat hienosäädetyt sisäiset mallit ovat mahdollisia.
+
+### Millainen vastaanotto ratkaisulle oli?
+
+Vastaanotto oli myönteinen. Agenttipohjaisten tekoälyprojektien aloitus on itse asiassa hyvin helppoa. On mahdollista rakentaa proof of concept nopeasti ja saavuttaa noin 70–80 % tarkkuus melko pian.
+
+Todellinen haaste tulee, kun siirrytään 70–80 prosentista kohti sataa. Tämä "pitkä häntä" vaatii paljon työtä ja erityistä asiantuntemusta kaikkien erikoistapausten ratkaisemiseen ja järjestelmän tekemiseen luotettavaksi.
+
+Tässä projektissa saimme omakohtaista kokemusta siitä, mitä hyppäys lupaavasta proof of conceptista tuotantovalmiiseen yritysratkaisuun vaatii. Asiakas arvosti läpinäkyvyyttämme koko prosessin ajan ja sitä ylimääräistä vaivaa, jonka näimme päästäksemme korkeaan 90 prosentin tarkkuuteen, jota yritysasiakkaat odottavat.
+
+### Millaisia haasteita projektissa ilmeni?
+
+Odotusten hallinta oli suurin. Varhainen menestys voi luoda epärealistisia toiveita. Meidän piti olla selkeitä siitä, että viimeistenkin erikoistapauksien hiominen vie aikaa ja vaatii asiantuntemusta.
+
+Toinen haaste oli työkalut. Monet kehykset ja alustat, joita tällaiseen työhön haluaisi, eivät vielä olleet olemassa. Jouduimme rakentamaan sisäisiä työkaluja ja mukauttamaan prosessejamme hallitsemaan ympäristöä, jossa pienelläkin promptin muutoksella saattoi olla isoja vaikutuksia tuloksiin.
+
+### Muita kiinnostavia havaintoja?
+
+Prosessipuolella meidän piti myös sopeutua. Tällainen projekti on hyvin ketterä ja erittäin innovatiivinen, mutta myös epävarma. Ympäristön hallinta vaati meitä muuttamaan työtapojamme ja suunnittelemaan prosesseja, jotka pystyivät käsittelemään arvaamattomuutta.
+
+Se oli tärkeä oppi: innovaatioprojektit kuten tämä vaativat paitsi uutta teknologiaa, myös uusia työtapoja.
+
+### Voiko samaa ratkaisukonseptia soveltaa muualla?
+
+Kyllä. Olemme itse asiassa tuotteistaneet ratkaisun. Tarjoamme nyt yleisempää itsepalveluna käytettävää Text-to-SQL -tuotetta, jossa asiakkaat voivat perustaa oman ympäristönsä ja yhdistää ratkaisuun oman tietokantansa. Ratkaisu tukee jo useita relaatiotietokantoja ja osaa konfiguroida metadatakuvaukset, liiketoimintasäännöt, suojaukset ja roolipohjaisen pääsynhallinnan.
+
+Kun asetukset on tehty, loppukäyttäjät voivat siirtyä suoraan chat-pohjaiseen käyttöliittymään. Suunnittelimme sen mahdollisimman saumattomaksi, toimien täysin asiakkaan omassa pilvessä tai ympäristössä, ilman yhteyttä ulkoisiin järjestelmiin jos he niin haluavat.
+
+### Mikä oli parasta?
+
+Minulle paras osa oli oppiminen. Ei vain tekniset opit, vaan myös prosessioivallukset: ymmärrys siitä, millaisia hallintakäytäntöjä tarvitaan näiden kohinaisten, arvaamattomien ympäristöjen kontrolloimiseen, joissa pienelläkin muutoksella voi olla iso vaikutus.
+
+Nuo opit ovat olleet korvaamattomia. Ne mahdollistivat innovatiivisen ratkaisun luomisen ja auttavat nyt sekä meitä että asiakkaitamme rakentamaan parempia sekä kestävämpiä ratkaisuja jatkossa.

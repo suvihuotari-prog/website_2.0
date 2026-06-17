@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { C, NAV_LINKS, CALENDLY_URL, CONTAINER_MAX_WIDTH, PILL_BORDER_RADIUS } from "@/lib/tokens";
+import { usePathname } from "next/navigation";
+import { C, NAV_LINKS, NAV_LINKS_FI, UI_TEXTS, CALENDLY_URL, CONTAINER_MAX_WIDTH, PILL_BORDER_RADIUS } from "@/lib/tokens";
+import { translatePath } from "@/lib/translations";
 
 const FlagFI = () => (
   <svg width="22" height="16" viewBox="0 0 22 16" fill="none" style={{ borderRadius: 2, display: "block" }}>
@@ -33,7 +35,14 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [lang, setLang] = useState("en");
+  const pathname = usePathname() || "/";
+  // Tunnista nykyinen kieli URL-polun perusteella
+  const lang = pathname.startsWith("/fi") ? "fi" : "en";
+  // Valitse navigaation linkit ja UI-tekstit kielen mukaan
+  const navLinks = lang === "fi" ? NAV_LINKS_FI : NAV_LINKS;
+  const texts = UI_TEXTS[lang];
+  // Etsi saman sisällön käännös toiselle kielelle käännöstaulukosta
+  const switchLangHref = (target) => translatePath(pathname, target);
   const dropdownRef = useRef(null);
   const timeoutRef = useRef(null);
 
@@ -74,11 +83,11 @@ export function Navbar() {
         maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: "0 30px",
         display: "flex", alignItems: "center", justifyContent: "space-between", height: 72,
       }}>
-        <a href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+        <a href={lang === "fi" ? "/fi" : "/"} style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
           <img src="/images/logos/DD-Logo-Horizontal.png" alt="Data Design" style={{ height: 30, width: "auto" }} />
         </a>
         <div className="dd-nav-desktop" style={{ display: "flex", alignItems: "center", gap: 36 }}>
-          {NAV_LINKS.map((l) =>
+          {navLinks.map((l) =>
             l.children ? (
               /* Dropdown menu item */
               <div
@@ -131,7 +140,7 @@ export function Navbar() {
               </div>
             ) : (
               /* Regular link */
-              <a key={l.href} href={l.href} className="dd-nav-link" style={{
+              <a key={l.label} href={l.href} className="dd-nav-link" style={{
                 color: C.black, textDecoration: "none", fontSize: 15, fontWeight: 400,
               }}>{l.label}</a>
             )
@@ -144,30 +153,30 @@ export function Navbar() {
             }}
             onMouseEnter={e => e.currentTarget.style.opacity = "0.85"}
             onMouseLeave={e => e.currentTarget.style.opacity = "1"}
-          >Book a call</a>
+          >{texts.bookCall}</a>
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginLeft: 8 }}>
-            <button
-              onClick={() => setLang("en")}
+            <a
+              href={switchLangHref("en")}
               style={{
                 background: "none", border: "none", cursor: "pointer", padding: 3,
                 opacity: lang === "en" ? 1 : 0.35, transition: "opacity 0.2s",
-                borderRadius: 3,
+                borderRadius: 3, display: "inline-block",
                 outline: lang === "en" ? `2px solid ${C.seawave}` : "2px solid transparent",
               }}
               aria-label="English"
               title="English"
-            ><FlagEN /></button>
-            <button
-              onClick={() => setLang("fi")}
+            ><FlagEN /></a>
+            <a
+              href={switchLangHref("fi")}
               style={{
                 background: "none", border: "none", cursor: "pointer", padding: 3,
                 opacity: lang === "fi" ? 1 : 0.35, transition: "opacity 0.2s",
-                borderRadius: 3,
+                borderRadius: 3, display: "inline-block",
                 outline: lang === "fi" ? `2px solid ${C.seawave}` : "2px solid transparent",
               }}
               aria-label="Suomi"
               title="Suomi"
-            ><FlagFI /></button>
+            ><FlagFI /></a>
           </div>
         </div>
         <button className="dd-nav-hamburger" onClick={() => setMenuOpen(!menuOpen)} style={{
@@ -189,7 +198,7 @@ export function Navbar() {
           display: "none", flexDirection: "column", gap: 16, padding: "24px 40px 32px",
           background: C.white, borderTop: `1px solid ${C.border}`,
         }}>
-          {NAV_LINKS.map((l) =>
+          {navLinks.map((l) =>
             l.children ? (
               <div key={l.label} style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 <span style={{ color: C.textMuted, fontSize: 13, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
@@ -202,7 +211,7 @@ export function Navbar() {
                 ))}
               </div>
             ) : (
-              <a key={l.href} href={l.href} style={{ color: C.black, textDecoration: "none", fontSize: 17 }}>{l.label}</a>
+              <a key={l.label} href={l.href} style={{ color: C.black, textDecoration: "none", fontSize: 17 }}>{l.label}</a>
             )
           )}
           <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
@@ -211,30 +220,30 @@ export function Navbar() {
               borderRadius: PILL_BORDER_RADIUS, fontWeight: 500, fontSize: 16, textDecoration: "none",
               textAlign: "center", marginTop: 8,
             }}
-          >Book a call</a>
+          >{texts.bookCall}</a>
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginTop: 8 }}>
-            <button
-              onClick={() => setLang("en")}
+            <a
+              href={switchLangHref("en")}
               style={{
                 background: "none", border: "none", cursor: "pointer", padding: 4,
                 opacity: lang === "en" ? 1 : 0.35, transition: "opacity 0.2s",
-                borderRadius: 3,
+                borderRadius: 3, display: "inline-block",
                 outline: lang === "en" ? `2px solid ${C.seawave}` : "2px solid transparent",
               }}
               aria-label="English"
               title="English"
-            ><FlagEN /></button>
-            <button
-              onClick={() => setLang("fi")}
+            ><FlagEN /></a>
+            <a
+              href={switchLangHref("fi")}
               style={{
                 background: "none", border: "none", cursor: "pointer", padding: 4,
                 opacity: lang === "fi" ? 1 : 0.35, transition: "opacity 0.2s",
-                borderRadius: 3,
+                borderRadius: 3, display: "inline-block",
                 outline: lang === "fi" ? `2px solid ${C.seawave}` : "2px solid transparent",
               }}
               aria-label="Suomi"
               title="Suomi"
-            ><FlagFI /></button>
+            ><FlagFI /></a>
           </div>
         </div>
       )}

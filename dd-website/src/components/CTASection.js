@@ -1,9 +1,15 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { C, CALENDLY_URL, PILL_BORDER_RADIUS } from "@/lib/tokens";
 import { Reveal } from "@/components/Reveal";
 
-export function CTASection({ heading, subtitle, secondaryLabel = "See customer stories", secondaryHref = "/customer-stories", image, imageSize = 100, children }) {
+export function CTASection({ heading, subtitle, primaryLabel, secondaryLabel, secondaryHref, image, imageSize = 100, children }) {
+  const pathname = usePathname() || "/";
+  const isFi = pathname.startsWith("/fi");
+  const primary = primaryLabel || (isFi ? "Varaa keskustelu" : "Book a call");
+  const secLabel = secondaryLabel || (isFi ? "Katso asiakastarinat" : "See customer stories");
+  const secHref = secondaryHref || (isFi ? "/fi/customer-stories" : "/customer-stories");
   return (
     <section style={{ padding: "40px 0", background: C.white }}>
       <Reveal>
@@ -12,7 +18,7 @@ export function CTASection({ heading, subtitle, secondaryLabel = "See customer s
           minHeight: "clamp(580px, 60vw, 780px)",
           overflow: "hidden",
         }}>
-          {/* Left — Lemon */}
+          {/* Left. Lemon */}
           <div className="dd-cta-left" style={{
             flex: 1,
             width: "50%",
@@ -45,8 +51,8 @@ export function CTASection({ heading, subtitle, secondaryLabel = "See customer s
                       border: `1px solid ${C.black}`, fontWeight: 500, fontSize: 16,
                       textDecoration: "none", transition: "all 0.2s ease",
                     }}
-                  >Book a call</a>
-                  <a href={secondaryHref}
+                  >{primary}</a>
+                  <a href={secHref}
                     className="dd-btn-wipe"
                     style={{
                       display: "inline-block", background: C.white, color: C.black,
@@ -54,12 +60,12 @@ export function CTASection({ heading, subtitle, secondaryLabel = "See customer s
                       border: `1px solid ${C.black}`, fontWeight: 500, fontSize: 16,
                       textDecoration: "none", transition: "all 0.2s ease",
                     }}
-                  >{secondaryLabel}</a>
+                  >{secLabel}</a>
                 </div>
               </div>
             </div>
 
-          {/* Right — Gray */}
+          {/* Right. Gray */}
           <div className="dd-cta-right" style={{
             flex: 1,
             width: "50%",

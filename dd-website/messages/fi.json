@@ -1,0 +1,50 @@
+{
+  "Navbar": {
+    "services": "Palvelut",
+    "solutions": "Ratkaisut",
+    "customerStories": "Asiakastarinat",
+    "insights": "Näkemykset",
+    "company": "Yritys",
+    "aboutUs": "Meistä",
+    "careers": "Ura",
+    "contact": "Ota yhteyttä",
+    "bookCall": "Varaa keskustelu"
+  },
+
+  "Footer": {
+    "rights": "Kaikki oikeudet pidätetään",
+    "company": "Yritys",
+    "services": "Palvelut",
+    "resources": "Materiaalit"
+  },
+
+  "Hero": {
+    "breadcrumbCustomerStories": "Asiakastarinat",
+    "breadcrumbInsights": "Näkemykset",
+    "breadcrumbSolutions": "Ratkaisut"
+  },
+
+  "CaseStudy": {
+    "challenge": "Haaste",
+    "whatWeBuilt": "Mitä rakensimme",
+    "results": "Tulokset",
+    "beyondTheNumbers": "Lisäksi",
+    "exploreRelated": "Tutustu liittyviin ratkaisuihin",
+    "exploreRelatedSubtitle": "Tulosten taustalla olevat lähestymistavat — saatavilla myös teidän liiketoimintaanne."
+  },
+
+  "CTA": {
+    "defaultHeading": "Valmis vastaaviin tuloksiin?",
+    "defaultSubtitle": "Varaa ilmainen 30 minuutin keskustelu. Käymme läpi miten tämä voisi toimia liiketoiminnassanne.",
+    "bookCall": "Varaa keskustelu",
+    "seeAll": "Kaikki ratkaisut"
+  },
+
+  "Common": {
+    "readMore": "Lue lisää",
+    "readStory": "Lue tarina",
+    "readArticle": "Lue artikkeli",
+    "applyNow": "Hae nyt",
+    "getStarted": "Aloita"
+  }
+}

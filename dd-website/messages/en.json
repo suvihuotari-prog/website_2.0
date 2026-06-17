@@ -1,0 +1,50 @@
+{
+  "Navbar": {
+    "services": "Services",
+    "solutions": "Solutions",
+    "customerStories": "Customer Stories",
+    "insights": "Insights",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "contact": "Contact",
+    "bookCall": "Book a call"
+  },
+
+  "Footer": {
+    "rights": "All rights reserved",
+    "company": "Company",
+    "services": "Services",
+    "resources": "Resources"
+  },
+
+  "Hero": {
+    "breadcrumbCustomerStories": "Customer Stories",
+    "breadcrumbInsights": "Insights",
+    "breadcrumbSolutions": "Solutions"
+  },
+
+  "CaseStudy": {
+    "challenge": "The challenge",
+    "whatWeBuilt": "What we built",
+    "results": "Results",
+    "beyondTheNumbers": "Beyond the numbers",
+    "exploreRelated": "Explore related solutions",
+    "exploreRelatedSubtitle": "The approaches behind these results — available for your business too."
+  },
+
+  "CTA": {
+    "defaultHeading": "Ready for similar results?",
+    "defaultSubtitle": "Book a free 30-minute call. We'll discuss how this could work for your business.",
+    "bookCall": "Book a call",
+    "seeAll": "See all solutions"
+  },
+
+  "Common": {
+    "readMore": "Read more",
+    "readStory": "Read story",
+    "readArticle": "Read article",
+    "applyNow": "Apply now",
+    "getStarted": "Get started"
+  }
+}

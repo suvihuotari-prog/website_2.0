@@ -36,7 +36,7 @@ function ReadingProgress() {
 
 /**
  * Reusable template for insight/article detail pages.
- * Editorial magazine aesthetic — serif titles, drop caps, decorative pull quotes.
+ * Editorial magazine aesthetic. Serif titles, drop caps, decorative pull quotes.
  *
  * Props:
  * - title, category, date, readTime
@@ -70,7 +70,7 @@ export function InsightArticleTemplate({
       <ReadingProgress />
 
       {/* ═══════════════════════════════════
-           HERO — Editorial header
+           HERO. Editorial header
          ═══════════════════════════════════ */}
       <section style={{
         paddingTop: 72,
@@ -95,17 +95,19 @@ export function InsightArticleTemplate({
                 padding: "5px 14px", borderRadius: PILL_BORDER_RADIUS, background: badgeBg,
                 fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em",
               }}>{category}</span>
-              <span style={{ fontSize: 13, color: C.textMuted }}>{date}</span>
+              {date && (
+                <span style={{ fontSize: 13, color: C.textMuted }}>{date}</span>
+              )}
               {readTime && (
                 <>
-                  <span style={{ color: C.border }}>|</span>
+                  {date && <span style={{ color: C.border }}>|</span>}
                   <span style={{ fontSize: 13, color: C.textMuted }}>{readTime}</span>
                 </>
               )}
             </div>
           </Reveal>
 
-          {/* Title — serif, editorial scale */}
+          {/* Title. Serif, editorial scale */}
           <Reveal delay={0.1}>
             <h1 className="dd-article-serif" style={{
               fontSize: 54, letterSpacing: "-0.025em",
@@ -160,10 +162,10 @@ export function InsightArticleTemplate({
             <Reveal>
               <div style={{
                 borderRadius: 20, overflow: "hidden",
-                background: C.gray, maxHeight: 480,
+                background: C.gray,
               }}>
                 <img src={image} alt="" className="dd-article-hero-img" style={{
-                  width: "100%", height: "100%", objectFit: "cover",
+                  width: "100%", height: "auto", objectFit: "contain",
                   display: "block",
                 }} />
               </div>
@@ -181,7 +183,7 @@ export function InsightArticleTemplate({
           <div className="dd-article-layout" style={{
             display: "flex", gap: 56, alignItems: "flex-start",
           }}>
-            {/* Left column — article text */}
+            {/* Left column. Article text */}
             <div className="dd-article-main" style={{ flex: 1, minWidth: 0 }}>
               <Reveal>
                 <div className="dd-article-body">
@@ -190,7 +192,7 @@ export function InsightArticleTemplate({
               </Reveal>
             </div>
 
-            {/* Right column — sticky sidebar */}
+            {/* Right column. Sticky sidebar */}
             {keyTakeaways.length > 0 && (
               <div className="dd-article-sidebar" style={{
                 width: 300, flexShrink: 0,
@@ -308,7 +310,7 @@ export function InsightArticleTemplate({
          ═══════════════════════════════════ */}
       <CTASection
         heading="Want to discuss how this applies to your organization?"
-        subtitle="Book a free 30-minute call. You'll leave with clarity on your next step — not a sales pitch."
+        subtitle="Book a free 30-minute call. You'll leave with clarity on your next step. Not a sales pitch."
         secondaryLabel="See our services"
         secondaryHref="/services"
         image="/images/illustrations/DD-Illustration-1.png"
@@ -318,10 +320,10 @@ export function InsightArticleTemplate({
 }
 
 /* ══════════════════════════════════════════════
-   Prose helper components — editorial style
+   Prose helper components. Editorial style
    ══════════════════════════════════════════════ */
 
-/** Section heading within article body — serif */
+/** Section heading within article body. Serif */
 export function ArticleHeading({ children }) {
   return (
     <h2 className="dd-article-serif" style={{
@@ -331,7 +333,7 @@ export function ArticleHeading({ children }) {
   );
 }
 
-/** Question in Q&A / Expert Talk format — with decorative divider above */
+/** Question in Q&A / Expert Talk format. With decorative divider above */
 export function ArticleQuestion({ children }) {
   return (
     <>
@@ -354,7 +356,7 @@ export function ArticleParagraph({ children }) {
   );
 }
 
-/** Pull quote / highlight block — editorial with oversized quotation mark */
+/** Pull quote / highlight block. Editorial with oversized quotation mark */
 export function ArticleQuote({ children }) {
   return (
     <blockquote style={{
@@ -367,21 +369,26 @@ export function ArticleQuote({ children }) {
       <span className="dd-pullquote-mark" style={{
         top: 12, left: 28,
       }}>&ldquo;</span>
-      <p style={{
+      {/* <div> not <p>: markdown blockquotes wrap their text in a <p>, which
+          would nest <p> inside <p>. Inner paragraph inherits styling via CSS. */}
+      <div className="dd-article-quote-body" style={{
         fontSize: 19, lineHeight: 1.7, fontStyle: "italic",
         color: C.black, fontWeight: 400,
         paddingTop: 8, position: "relative",
-      }}>{children}</p>
+      }}>{children}</div>
     </blockquote>
   );
 }
 
-/** Lead / intro paragraph — drop cap on first letter */
+/** Lead / intro paragraph. Drop cap on first letter.
+ *  Rendered as a <div> (not <p>) because MDX wraps the inner text in its own
+ *  <p>; a <p> here would nest <p> inside <p> and break hydration. The inner
+ *  paragraph inherits this element's typography via globals.css. */
 export function ArticleLead({ children }) {
   return (
-    <p className="dd-drop-cap" style={{
+    <div className="dd-drop-cap dd-article-lead" style={{
       fontSize: 20, lineHeight: 1.75, color: C.black,
       marginBottom: 32, fontWeight: 400,
-    }}>{children}</p>
+    }}>{children}</div>
   );
 }

@@ -12,25 +12,25 @@ export default function SolutionGenAIAutomation() {
       hero={{
         breadcrumbLabel: "GenAI & Process Automation",
         badge: "GenAI & Process Automation",
-        frameworkBadge: "Accelerated by our own AI tools — Text2SQL, Auto Data Catalog",
+        frameworkBadge: "Accelerated by our own AI tools. Text2SQL, Auto Data Catalog",
         title: "We're drowning in manual work that AI should handle",
-        subtitle: "Your people spend hours on tasks that should take minutes — processing documents, preparing reports, answering data questions. Imagine that work done automatically, and your team focused on the decisions that actually need them.",
+        subtitle: "Your people spend hours on tasks that should take minutes. Processing documents, preparing reports, answering data questions. Imagine that work done automatically, and your team focused on the decisions that actually need them.",
       }}
       challenge={{
-        subtitle: "Your team's capacity is being consumed by repetitive work that follows predictable patterns — exactly the kind of work GenAI excels at.",
+        subtitle: "Your team's capacity is being consumed by repetitive work that follows predictable patterns. Exactly the kind of work GenAI excels at.",
         items: [
-          { title: "Hours lost to document processing", body: "PDFs, lab reports, invoices, regulatory filings — your team manually extracts data from documents that machines should read automatically. Every hour spent on this is an hour lost to work that matters." },
-          { title: "Business users locked out of their own data", body: "Every data question requires a ticket to IT or a SQL-savvy analyst. By the time the answer arrives, the decision moment has passed — and your team has learned not to ask." },
+          { title: "Hours lost to document processing", body: "PDFs, lab reports, invoices, regulatory filings. Your team manually extracts data from documents that machines should read automatically. Every hour spent on this is an hour lost to work that matters." },
+          { title: "Business users locked out of their own data", body: "Every data question requires a ticket to IT or a SQL-savvy analyst. By the time the answer arrives, the decision moment has passed. And your team has learned not to ask." },
           { title: "Skilled people doing repetitive work", body: "Your best people spend significant time on tasks that follow predictable patterns. That's expensive capacity that should be focused on judgment, strategy, and the problems only humans can solve." },
         ],
       }}
       steps={{
         subtitle: "Working prototype in weeks, production deployment with proper guardrails, and your team trained to extend the solutions themselves.",
         items: [
-          { step: "1", title: "Your highest-impact processes, identified", desc: "Your manual processes are mapped and ranked by volume, complexity, and business value — so automation starts where it makes the biggest difference, not where it's easiest." },
-          { step: "2", title: "Your solution, prototyped fast", desc: "Working demonstrations built in weeks using our existing tools and frameworks. Your team sees results early — not after months of development." },
+          { step: "1", title: "Your highest-impact processes, identified", desc: "Your manual processes are mapped and ranked by volume, complexity, and business value. So automation starts where it makes the biggest difference, not where it's easiest." },
+          { step: "2", title: "Your solution, prototyped fast", desc: "Working demonstrations built in weeks using our existing tools and frameworks. Your team sees results early. Not after months of development." },
           { step: "3", title: "Your solution, in production with guardrails", desc: "From prototype to production with data security, access controls, error handling, and integration with your existing systems. Built to run reliably, not just to demo well." },
-          { step: "4", title: "Your team, equipped to extend it", desc: "Your team is trained to use and extend the solutions. The next processes to automate are identified — building a continuous improvement cycle you own." },
+          { step: "4", title: "Your team, equipped to extend it", desc: "Your team is trained to use and extend the solutions. The next processes to automate are identified. Building a continuous improvement cycle you own." },
         ],
       }}
       results={{
@@ -38,12 +38,12 @@ export default function SolutionGenAIAutomation() {
         children: <>
           <Reveal delay={0.05}>
             <CaseCard company="Solar Foods" logo="/images/logos/SolarFoods_BW.jpg" logoHeight={24} tag="Food Technology"
-              description="Automated lab report processing — PDF to structured data in minutes instead of hours. EFSA regulatory monitoring system that tracks compliance requirements automatically, eliminating manual monitoring."
+              description="Automated lab report processing. PDF to structured data in minutes instead of hours. EFSA regulatory monitoring system that tracks compliance requirements automatically, eliminating manual monitoring."
             />
           </Reveal>
           <Reveal delay={0.1}>
             <CaseCard company="KTI Kiinteistötieto" tag="Real Estate Data"
-              description="Text2SQL deployed for real estate market data. Natural language queries embedded directly in the existing client portal. Anyone can query complex data without SQL — decisions happen faster."
+              description="Text2SQL deployed for real estate market data. Natural language queries embedded directly in the existing client portal. Anyone can query complex data without SQL. Decisions happen faster."
             />
           </Reveal>
           <Reveal delay={0.15}>
@@ -60,10 +60,10 @@ export default function SolutionGenAIAutomation() {
         subtitle: "Your automation project moves faster because the core technology is already built and production-tested.",
         children: <>
           <Reveal delay={0.05}>
-            <ToolPreviewCard name="Text2SQL" description="Anyone on your team can query your data — in plain language. Deployed in production at KTI Kiinteistötieto. Natural language to SQL generation with secure, role-based access controls that embed into your existing portals and applications." accent={C.turquoise} />
+            <ToolPreviewCard name="Text2SQL" description="Anyone on your team can query your data. In plain language. Deployed in production at KTI Kiinteistötieto. Natural language to SQL generation with secure, role-based access controls that embed into your existing portals and applications." accent={C.turquoise} />
           </Reveal>
           <Reveal delay={0.1}>
-            <ToolPreviewCard name="Auto Data Catalog" description="Your data assets documented automatically — no manual effort. Creates business-friendly descriptions by extracting metadata from tools like Power BI. Your team understands what data exists and how to use it — without weeks of documentation work." accent={C.lemon} />
+            <ToolPreviewCard name="Auto Data Catalog" description="Your data assets documented automatically. No manual effort. Creates business-friendly descriptions by extracting metadata from tools like Power BI. Your team understands what data exists and how to use it. Without weeks of documentation work." accent={C.lemon} />
           </Reveal>
         </>,
       }}
@@ -71,7 +71,7 @@ export default function SolutionGenAIAutomation() {
         subtitle: "You move from \"we're drowning in manual work\" to \"the tedious is automated and our team focuses on what matters.\"",
         items: [
           "Documents processed automatically, not manually",
-          "Plain-language access to your data — no SQL skills needed",
+          "Plain-language access to your data. No SQL skills needed",
           "Hours of manual work reduced to minutes",
           "Production-ready solutions with proper guardrails",
           "Your team trained to extend and maintain the solutions",

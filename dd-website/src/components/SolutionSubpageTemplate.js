@@ -10,37 +10,72 @@ import { CTASection } from "@/components/CTASection";
  * Shared template for all 6 solution subpages.
  *
  * Props:
+ *   locale?: "en" | "fi"                      . Defaults to "en". Switches section labels and buttons.
  *   hero: { breadcrumbLabel, badge, frameworkBadge?, title, subtitle }
  *   challenge: { subtitle, items: [{ title, body }] }
  *   steps: { subtitle, items: [{ step, title, desc }] }
- *   comparison?: { subtitle, children }       — optional section between steps and results
+ *   comparison?: { subtitle, children }      . Optional section between steps and results
  *   results: { subtitle, background?, gridColumns?, children, footnote? }
- *   applications?: { subtitle, items: [{ title, body }] } — optional "Where it applies" section
- *   tools?: { subtitle, children }          — optional section
+ *   applications?: { subtitle, items: [{ title, body }] }. Optional "Where it applies" section
+ *   tools?: { subtitle, children }         . Optional section
  *   deliverables: { subtitle, items?: string[], groups?: {label, items}[], timelineBadge, timelineDesc, timelineNote? }
- *   related?: { subtitle, children }           — optional section
+ *   related?: { subtitle, children }          . Optional section
  *   cta: { heading, subtitle, image?, imageSize? }
  */
-export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, results, applications, tools, deliverables, related, cta }) {
+const T = {
+  en: {
+    solutionsLabel: "Solutions",
+    solutionsHref: "/solutions",
+    bookCall: "Book a free call",
+    backToSolutions: "Back to all solutions",
+    challenge: "The challenge",
+    howWeSolve: "How we solve it",
+    howCompares: "How this compares",
+    provenResults: "Proven results",
+    whereApplies: "Where it applies",
+    toolsAccelerate: "Tools that accelerate this",
+    exploreAllTools: "Explore all tools and accelerators →",
+    whatYouGet: "What you get",
+    relatedSolutions: "Related solutions",
+  },
+  fi: {
+    solutionsLabel: "Ratkaisut",
+    solutionsHref: "/fi/solutions",
+    bookCall: "Varaa ilmainen keskustelu",
+    backToSolutions: "Takaisin kaikkiin ratkaisuihin",
+    challenge: "Haaste",
+    howWeSolve: "Näin ratkaisemme sen",
+    howCompares: "Miten tämä vertautuu",
+    provenResults: "Todistetut tulokset",
+    whereApplies: "Missä tämä toimii",
+    toolsAccelerate: "Työkalut jotka nopeuttavat tätä",
+    exploreAllTools: "Tutustu kaikkiin työkaluihin →",
+    whatYouGet: "Mitä saat",
+    relatedSolutions: "Liittyvät ratkaisut",
+  },
+};
+
+export function SolutionSubpageTemplate({ locale = "en", hero, challenge, steps, comparison, results, applications, tools, deliverables, related, cta }) {
+  const t = T[locale] || T.en;
   return (
     <>
       {/* HERO */}
       <HeroSection
         gradient="beige"
-        breadcrumb={[{ label: "Solutions", href: "/solutions" }, { label: hero.breadcrumbLabel }]}
+        breadcrumb={[{ label: t.solutionsLabel, href: t.solutionsHref }, { label: hero.breadcrumbLabel }]}
         badge={hero.badge}
         frameworkBadge={hero.frameworkBadge}
         title={hero.title}
         subtitle={hero.subtitle}
-        primaryButton={{ label: "Book a free call", href: CALENDLY_URL }}
-        secondaryButton={{ label: "Back to all solutions", href: "/solutions" }}
+        primaryButton={{ label: t.bookCall, href: CALENDLY_URL }}
+        secondaryButton={{ label: t.backToSolutions, href: t.solutionsHref }}
       />
 
       {/* THE CHALLENGE */}
       <section style={{ background: C.white }}>
         <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
           <Reveal>
-            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>The challenge</h2>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{t.challenge}</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{challenge.subtitle}</p>
           </Reveal>
           <div className="dd-challenge-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
@@ -60,7 +95,7 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
       <section style={{ background: C.gray }}>
         <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
           <Reveal>
-            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>How we solve it</h2>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{t.howWeSolve}</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{steps.subtitle}</p>
           </Reveal>
           <div className="dd-steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
@@ -86,7 +121,7 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
         <section style={{ background: C.white }}>
           <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
             <Reveal>
-              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{comparison.heading || "How this compares"}</h2>
+              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{comparison.heading || t.howCompares}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{comparison.subtitle}</p>
             </Reveal>
             <Reveal delay={0.05}>
@@ -100,7 +135,7 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
       <section className="dd-grain" style={{ background: results.background || C.lemon }}>
         <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
           <Reveal>
-            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>Proven results</h2>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{t.provenResults}</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{results.subtitle}</p>
           </Reveal>
           <div className="dd-proof-grid" style={{ display: "grid", gridTemplateColumns: `repeat(${results.gridColumns || 3}, 1fr)`, gap: 20 }}>
@@ -121,7 +156,7 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
         <section style={{ background: C.white }}>
           <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
             <Reveal>
-              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>Where it applies</h2>
+              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{t.whereApplies}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{applications.subtitle}</p>
             </Reveal>
             <div className="dd-challenge-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
@@ -157,7 +192,7 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
         <section style={{ background: C.white }}>
           <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
             <Reveal>
-              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>Tools that accelerate this</h2>
+              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{t.toolsAccelerate}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{tools.subtitle}</p>
             </Reveal>
             <div className="dd-tools-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
@@ -165,8 +200,8 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
             </div>
             <Reveal delay={0.15}>
               <div style={{ textAlign: "center", marginTop: 32 }}>
-                <a href="/solutions" className="dd-link-hover" style={{ color: C.seawave, fontSize: 15, fontWeight: 500, textDecoration: "none" }}>
-                  Explore all tools and accelerators →
+                <a href={t.solutionsHref} className="dd-link-hover" style={{ color: C.seawave, fontSize: 15, fontWeight: 500, textDecoration: "none" }}>
+                  {t.exploreAllTools}
                 </a>
               </div>
             </Reveal>
@@ -178,7 +213,7 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
       <section className="dd-grain-subtle" style={{ background: `linear-gradient(to right, ${C.beige}, ${C.lemon})` }}>
         <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
           <Reveal>
-            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>What you get</h2>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{t.whatYouGet}</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{deliverables.subtitle}</p>
           </Reveal>
           <Reveal delay={0.05}>
@@ -230,7 +265,7 @@ export function SolutionSubpageTemplate({ hero, challenge, steps, comparison, re
         <section style={{ background: C.white }}>
           <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
             <Reveal>
-              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>Related solutions</h2>
+              <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>{t.relatedSolutions}</h2>
               <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>{related.subtitle}</p>
             </Reveal>
             <div className="dd-related-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>

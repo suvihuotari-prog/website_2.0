@@ -1,0 +1,66 @@
+---
+slug: ai-requires-persistence
+locale: fi
+title: "Tekoäly vaatii sitkeyttä: Miksi harva projekti onnistuu ensimmäisellä yrittämällä?"
+subtitle: "Kun ensimmäinen toteutus ei toiminut, jouduimme miettimään uusiksi. Lopputulos oli parempi kuin alun perin odotimme."
+category: "AI Insights"
+readTime: "5 min"
+author: "Mika Aho"
+authorRole: "CEO"
+authorPhoto: "/images/people/MikaAho.jpg"
+image: "/images/people/MikaAho_wide.jpg"
+tags:
+  - "tekoäly"
+  - "koneoppiminen"
+  - "hinnoittelu"
+  - "kannattavuus"
+keyTakeaways:
+  - "Useimmat tekoälyprojektit eivät onnistu ensimmäisellä yrittämällä. Se on normaalia, ei epäonnistumisen merkki"
+  - "Pelkkä ML-malli voi toistaa historiallisia kuvioita optimoinnin sijaan. Sääntöpohjainen viritystaso teki eron"
+  - "Korjaus: kerros, joka vertasi tuloksia reaaliajassa, sääti hintoja, kun tappiot kasvoivat, ja oppi, mitkä tuotteet kestivät korkeammat marginaalit"
+  - "Toinen kierros tuotti 15–20 % kannattavuusparannuksen ja noin 10 % myyntikasvun. Mittarit, jotka yleensä toimivat toisiaan vastaan"
+---
+
+<ArticleLead>
+Kun ensimmäinen toteutus ei toiminut, jouduimme miettimään uusiksi. Lopputulos oli parempi kuin alun perin odotimme.
+</ArticleLead>
+
+**Kuvittele pokeripeli, jossa et näe vastustajiasi, et näe heidän korttejaan etkä tiedä heidän panoksiaan. Ainoa tieto, jonka saat pelin jälkeen, on voititko vai hävisit, mutta et koskaan kuinka paljon.**
+
+**Juuri tätä peliä asiakkaamme pelaa joka päivä.**Heidän liiketoimintansa pyörii suljettujen huutokauppojen ympärillä, joissa alin hinta voittaa, mutta kukaan ei koskaan kerro, mitä kilpailijat tarjosivat. Meiltä pyydettiin algoritmia, joka auttaisi heitä voittamaan tämän pelin useammin. Haaste otettiin vastaan, mutta ensimmäinen toteutus ei aivan tuottanut toivottua tulosta.
+
+## Ensimmäinen yritys ei toiminut
+
+Ensimmäisessä vaiheessa rakennettiin koneoppimismalli, johon syötettiin kaikki historiallinen data. Malli vietiin tuotantoon ja odotimme näkevämme muutoksia hinnoittelussa, mutta mitään ei tapahtunut. Malli toisti käytännössä täsmälleen samaa hinnoittelua, jota asiakas oli aina käyttänyt. 
+
+_Olimme rakentaneet monimutkaisen tavan tehdä sitä, mitä he jo tekivät._
+
+Tässä kohtaa olisi ollut helppo todeta, että tekoäly ei sovellu tähän käyttötapaukseen tai että data ei yksinkertaisesti riittänyt. Sen sijaan päätettiin selvittää, miksi malli käyttäytyi näin.
+
+## Ongelman ydin paljastui yksinkertaiseksi
+
+Vastaus oli lopulta selkeä: malli osasi ennustaa menneiden tarjousten perusteella, mutta se ei osannut optimoida. Se katsoi taaksepäin ja toisti historiallisia kaavoja sen sijaan, että olisi kokeillut mitään uutta tai oppinut omista tuloksistaan.
+
+Niinpä mallin päälle rakennettiin toinen kerros: sääntöpohjainen virityslogiikka, joka teki kolme asiaa:
+
+1. Se vertasi uuden järjestelmän tuloksia vanhaan reaaliajassa
+2. Jos häviöitä alkoi kertyä tavallista enemmän, järjestelmä laski hintoja automaattisesti
+3. Se oppi vähitellen tunnistamaan, mitkä tuotteet kestävät korkeamman hinnan ja mitkä eivät
+
+**Yksinkertaista, mutta toimivaa.**
+
+## Toinen pilotti tuotti yllättävän hyvät tulokset
+
+Kun uusi versio vietiin tuotantoon, tulokset ylittivät odotukset selvästi. **Kannattavuus nousi 15–20 prosenttia** ja samaan aikaan **myyntivolyymi kasvoi noin 10 prosenttia**.
+
+**Normaalisti nämä kaksi mittaria sotivat toisiaan vastaan:** hintojen nostaminen vähentää myyntiä ja hintojen laskeminen syö katetta. Mutta järjestelmä löysi ne tuotteet, joissa vanha hinnoittelu oli ollut pielessä. Se laski hintaa siellä, missä häviöitä tuli turhaan, ja nosti siellä, missä hinnoittelussa oli varaa.
+
+Investointi oli maltillinen ja takaisinmaksuaika lyhyt. Nyt ratkaisu tuottaa jatkuvaa lisäarvoa kuukausi toisensa jälkeen.
+
+## Mitä tästä opimme?
+
+Projektin tärkein opetus ei lopulta liittynyt algoritmeihin tai dataan vaan siihen, miten epäonnistumisiin suhtautuu. Ensimmäinen versio harvoin toimii täydellisesti ja se on ihan normaalia. Tärkeintä on selvittää, miksi jokin ei toimi ja kokeilla uudestaan.
+
+Jos olisimme luovuttaneet ensimmäisen takaiskun jälkeen, emme olisi koskaan saaneet tietää, mihin toinen iteraatio olisi pystynyt.
+
+_Oletko koskaan miettinyt, mikä teidän organisaatiossanne on se "melkein toiminut" AI-projekti, jota kannattaisi ehkä kokeilla uudelleen?_

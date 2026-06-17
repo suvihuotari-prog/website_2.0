@@ -26,7 +26,7 @@ export function CaseCard({ company, logo, logoHeight, tag, title, description, q
       }}
       transition={{ type: "spring", stiffness: 300, damping: 25 }}
     >
-      {/* Tag — right-aligned */}
+      {/* Tag. Right-aligned */}
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 20 }}>
         <span style={{
           display: "inline-block", padding: "5px 14px", borderRadius: PILL_BORDER_RADIUS,
@@ -75,7 +75,7 @@ export function CaseCard({ company, logo, logoHeight, tag, title, description, q
           </p>
           {quoteName && (
             <p style={{ fontSize: 12, color: C.seawave, fontWeight: 500 }}>
-              — {quoteName}{quoteTitle ? `, ${quoteTitle}` : ""}
+              , {quoteName}{quoteTitle ? `, ${quoteTitle}` : ""}
             </p>
           )}
         </div>

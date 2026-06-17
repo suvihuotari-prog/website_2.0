@@ -45,7 +45,7 @@ export function InsightCard({ title, description, category, date, author, author
                 fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em",
                 color: C.black,
               }}>{category}</span>
-              <span style={{ fontSize: 13, color: C.textMuted }}>{date}</span>
+              {date && <span style={{ fontSize: 13, color: C.textMuted }}>{date}</span>}
             </div>
             <h3 style={{ fontSize: 28, fontWeight: 600, marginBottom: 12, lineHeight: 1.3, letterSpacing: "-0.02em", color: C.black }}>
               {title}
@@ -116,7 +116,7 @@ export function InsightCard({ title, description, category, date, author, author
               fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em",
               color: C.black,
             }}>{category}</span>
-            <span style={{ fontSize: 12, color: C.textMuted }}>{date}</span>
+            {date && <span style={{ fontSize: 12, color: C.textMuted }}>{date}</span>}
           </div>
           <h3 style={{
             fontSize: 17, fontWeight: 600, marginBottom: 8, lineHeight: 1.35,

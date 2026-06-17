@@ -321,7 +321,7 @@ export default function ContactPage() {
       {/* CTA */}
       <CTASection
         heading="In 30 minutes, you'll know if we're the right fit"
-        subtitle="Whether you need a strategy sprint, a working AI solution, or senior people embedded in your team — you'll leave the call with clarity, not a sales pitch."
+        subtitle="Whether you need a strategy sprint, a working AI solution, or senior people embedded in your team. You'll leave the call with clarity, not a sales pitch."
         secondaryLabel="See our services"
         secondaryHref="/services"
         image="/images/illustrations/DD-Illustration-1.png"

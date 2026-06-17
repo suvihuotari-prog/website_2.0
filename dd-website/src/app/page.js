@@ -9,24 +9,18 @@ import { CountUp } from "@/components/CountUp";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { TestimonialSpotlight } from "@/components/TestimonialSpotlight";
 
-/* ══════════════════════════════════════════════
-   Stats bar data
-   ══════════════════════════════════════════════ */
 const STATS = [
   { number: "€200M+", label: "Revenue impact created for clients" },
+  { number: "100+", label: "Successful projects delivered" },
   { number: "50+", label: "AI solutions running in production" },
   { number: "30+", label: "Board-approved AI roadmaps" },
-  { number: "Weeks", label: "From first call to measurable results" },
 ];
 
-/* ══════════════════════════════════════════════
-   Featured solutions (3 most impactful)
-   ══════════════════════════════════════════════ */
 const FEATURED_SOLUTIONS = [
   {
     title: "We know AI matters, but where do we start?",
     tag: "AI Strategy & Roadmap",
-    description: "Too many options, no clear plan. Imagine walking into your next board meeting with a prioritized shortlist of your highest-impact AI opportunities — funded and ready to execute.",
+    description: "Too many options, no clear plan. Imagine walking into your next board meeting with a prioritized shortlist of your highest-impact AI opportunities, funded and ready to execute.",
     slug: "/solutions/ai-strategy",
   },
   {
@@ -38,14 +32,11 @@ const FEATURED_SOLUTIONS = [
   {
     title: "We don't really know our customers well enough",
     tag: "Customer Intelligence",
-    description: "Your customer data sits across disconnected systems — useful to no one. Imagine your sales team walking into every meeting fully briefed — knowing the customer's history, open issues, and next likely need.",
+    description: "Your customer data sits across disconnected systems, useful to no one. Imagine your sales team walking into every meeting fully briefed, knowing the customer's history, open issues, and next likely need.",
     slug: "/solutions/customer-intelligence",
   },
 ];
 
-/* ══════════════════════════════════════════════
-   Partners
-   ══════════════════════════════════════════════ */
 const PARTNERS = [
   {
     name: "Mika Aho",
@@ -57,7 +48,7 @@ const PARTNERS = [
   {
     name: "Pekka Autere",
     title: "Partner, Senior Advisor",
-    credential: "Led AI-based supply chain optimization — €200M+ revenue impact at H&M",
+    credential: "Led AI-based supply chain optimization, €200M+ revenue impact at H&M",
     photo: "/images/people/PekkaAutere.png",
     linkedin: "https://linkedin.com/in/pekkaautere/",
   },
@@ -77,9 +68,6 @@ const PARTNERS = [
   },
 ];
 
-/* ══════════════════════════════════════════════
-   Clients for proof strip
-   ══════════════════════════════════════════════ */
 const CLIENTS = [
   { name: "Helen", logo: "/images/logos/Helen_BW.png" },
   { name: "Tokmanni", logo: "/images/logos/Tokmanni_BW.png" },
@@ -101,9 +89,6 @@ const CLIENTS = [
   { name: "KiraHub", logo: "/images/logos/KiraHub_BW.png" },
 ];
 
-/* ══════════════════════════════════════════════
-   Main Page
-   ══════════════════════════════════════════════ */
 export default function HomePage() {
   return (
     <>
@@ -115,11 +100,10 @@ export default function HomePage() {
         blobs={2}
         image="/images/illustrations/DD-Illustration-4.png"
         title="Become an AI-native organization"
-        subtitle="Start with one business problem. See results in weeks. Then scale AI from a single win to how your entire company operates — proving value at every step before you take the next."
+        subtitle="Start with one business problem. See results in weeks. Then scale AI from a single win to how your entire company operates, proving value at every step before you take the next."
         primaryButton={{ label: "Book a free call", href: CALENDLY_URL }}
         secondaryButton={{ label: "See how it works", href: "/services" }}
       >
-        {/* Stats strip */}
         <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: "48px 40px 80px" }}>
           <Reveal delay={0.15} direction="scale">
             <div className="dd-stats-grid" style={{
@@ -129,12 +113,12 @@ export default function HomePage() {
             }}>
               {STATS.map((s, i) => (
                 <div key={i} style={{
-                  padding: i === 0 ? "32px 28px" : "28px 24px", textAlign: "center",
-                  borderRight: i < 3 ? `1px solid ${C.border}` : "none",
+                  padding: "28px 24px", textAlign: "center",
+                  borderRight: i < STATS.length - 1 ? `1px solid ${C.border}` : "none",
                 }}>
                   <div style={{
-                    fontSize: i === 0 ? 44 : 32,
-                    fontWeight: i === 0 ? 700 : 600,
+                    fontSize: 36,
+                    fontWeight: 600,
                     letterSpacing: "-0.02em", marginBottom: 4,
                   }}>
                     <CountUp value={s.number} />
@@ -149,24 +133,151 @@ export default function HomePage() {
         </div>
       </HeroSection>
 
-      {/* ═══════════════════════════════════
-           SOUND FAMILIAR? — Featured solutions
-         ═══════════════════════════════════ */}
+      {/* 2. Our clients (logos) */}
       <section style={{ background: C.gray }}>
         <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
           <Reveal>
-            <h2 style={{
-              fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em",
-            }}>Sound familiar?</h2>
-            <p style={{
-              fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52,
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 40, letterSpacing: "-0.02em", textAlign: "center" }}>
+              Our clients
+            </h2>
+          </Reveal>
+
+          <Reveal delay={0.05}>
+            <div className="dd-clients-row" style={{
+              display: "flex", justifyContent: "center", gap: 12,
+              flexWrap: "wrap", alignItems: "center",
             }}>
-              Every one of these challenges has a clear path to resolution — with results you can show your board.
+              {CLIENTS.map((client, i) => (
+                <div key={i} style={{
+                  background: C.white, borderRadius: PILL_BORDER_RADIUS,
+                  padding: client.logo ? "8px 20px" : "10px 24px",
+                  fontSize: 14, fontWeight: 500,
+                  color: C.black, border: `1px solid ${C.border}`,
+                  transition: "all 0.3s ease", cursor: "default",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}
+                  onMouseEnter={e => { e.currentTarget.style.background = C.lemon; e.currentTarget.style.borderColor = C.lemon; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = C.white; e.currentTarget.style.borderColor = C.border; }}
+                >
+                  {client.logo ? (
+                    <img src={client.logo} alt={client.name} style={{ height: 22, width: "auto", objectFit: "contain" }} />
+                  ) : client.name}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* 3. What working with us feels like */}
+      <section className="dd-grain" style={{ background: `linear-gradient(to right, ${C.lemon}, ${C.turquoise})` }}>
+        <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
+          <Reveal>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>
+              What working with us feels like
+            </h2>
+          </Reveal>
+
+          <div className="dd-why-grid" style={{
+            display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20,
+            marginTop: 40,
+          }}>
+            {[
+              {
+                title: "You work with the people who do the work",
+                body: "The people in your kickoff are the people who deliver. No hand-offs, no ramp-up time. Senior practitioners with 20+ years average experience from day one.",
+                accent: C.lemon,
+              },
+              {
+                title: "Your strategy becomes a working solution",
+                body: "The roadmap your board approves is the one that gets built. Strategy and implementation move together. Nothing ends up as a shelf document.",
+                accent: C.turquoise,
+              },
+              {
+                title: "Your projects move in weeks, not quarters",
+                body: "Our own AI tools accelerate every phase: from analysis to prototype to production. You get the speed of pre-built technology without buying software.",
+                accent: C.lemon,
+              },
+            ].map((item, i) => (
+              <Reveal key={i} delay={i * 0.06}>
+                <div style={{
+                  background: C.white, borderRadius: 16, padding: "28px 24px",
+                  borderTop: `3px solid ${item.accent}`,
+                  height: "100%",
+                }}>
+                  <h3 style={{ fontSize: 17, fontWeight: 600, marginBottom: 10, lineHeight: 1.35 }}>
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: 14, lineHeight: 1.65, color: C.textMuted }}>
+                    {item.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. What people say */}
+      <section style={{ background: C.beige }}>
+        <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
+          <Reveal>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>
+              What people say
+            </h2>
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>
+              In our clients' own words: what working with us feels like, and what it has produced.
             </p>
           </Reveal>
-          <div className="dd-solutions-grid" style={{
-            display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16,
+
+          <TestimonialSpotlight
+            quote="Our loyalty customers now get offers they care about. This means more visits, more sales, and 256% more coupon use. We turned customer insights into action and real business results."
+            highlight="256% more coupon use."
+            name="Tuomas Vihavainen"
+            title="Head of Group Analytics"
+            company="Tokmanni"
+            logo="/images/logos/Tokmanni_BW.png"
+          />
+
+          <div className="dd-testimonials-grid" style={{
+            display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 20,
           }}>
+            <Reveal delay={0.1}>
+              <TestimonialCard
+                quote="The engagement was comprehensive and professionally planned, significantly advancing our AI development. The clarity of the workshops and tools was impressive."
+                name="Kati Kinnunen"
+                photo="/images/people/kati_kinnunen.png"
+                title="Chief Digital Officer"
+                company="Helen"
+                logo="/images/logos/Helen_BW.png"
+              />
+            </Reveal>
+            <Reveal delay={0.17}>
+              <TestimonialCard
+                quote="Data Design helped us take control of our master data. Their clear approach made our data more accurate and easier to manage."
+                name="Matti Nurmi"
+                photo="/images/people/MattiNurmi.png"
+                title="CIO"
+                company="Anora"
+                logo="/images/logos/Anora_BW.png"
+              />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Sound familiar? */}
+      <section style={{ background: C.gray }}>
+        <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
+          <Reveal>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>
+              Sound familiar?
+            </h2>
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 620, marginBottom: 52 }}>
+              Every one of these challenges has a clear path to resolution, with results you can show your board.
+            </p>
+          </Reveal>
+          <div className="dd-solutions-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }}>
             {FEATURED_SOLUTIONS.map((s, i) => (
               <FeaturedSolutionCard key={s.slug} solution={s} index={i} />
             ))}
@@ -175,41 +286,32 @@ export default function HomePage() {
             <div style={{ textAlign: "center", marginTop: 36 }}>
               <a href="/solutions" className="dd-arrow-link dd-link-hover" style={{
                 color: C.seawave, fontSize: 15, fontWeight: 500, textDecoration: "none",
-              }}>See all solutions <span className="dd-arrow">{"\u2192"}</span></a>
+              }}>See all solutions <span className="dd-arrow">{"→"}</span></a>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════
-           THE PEOPLE BEHIND THE WORK
-         ═══════════════════════════════════ */}
+      {/* 6. The people behind the work */}
       <section style={{ background: C.white }}>
         <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
           <Reveal>
-            <h2 style={{
-              fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em",
-            }}>The people behind the work</h2>
-            <p style={{
-              fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 680, marginBottom: 52,
-            }}>
+            <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>
+              The people behind the work
+            </h2>
+            <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 680, marginBottom: 52 }}>
               Your engagement is led by the same people who've built AI strategies for Sandvik, optimized supply chains at H&M, and shipped production systems for S-Pankki and Metso.
             </p>
           </Reveal>
 
-          <div className="dd-partners-grid" style={{
-            display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20,
-          }}>
+          <div className="dd-partners-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
             {PARTNERS.map((p, i) => (
               <Reveal key={p.name} delay={i * 0.06}>
                 <div className="dd-portrait-card" style={{
                   background: C.gray, borderRadius: CARD_BORDER_RADIUS, overflow: "hidden",
                   height: "100%", display: "flex", flexDirection: "column",
                 }}>
-                  {/* Photo */}
-                  <div style={{
-                    height: 280, background: C.gray, overflow: "hidden", position: "relative",
-                  }}>
+                  <div style={{ height: 280, background: C.gray, overflow: "hidden", position: "relative" }}>
                     <img
                       src={p.photo}
                       alt={p.name}
@@ -217,7 +319,6 @@ export default function HomePage() {
                       style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top", display: "block" }}
                     />
                   </div>
-                  {/* Info */}
                   <div style={{ padding: "20px 20px 24px", flex: 1, display: "flex", flexDirection: "column" }}>
                     <h3 style={{ fontSize: 17, fontWeight: 600, marginBottom: 4 }}>{p.name}</h3>
                     <p style={{ fontSize: 13, color: C.textMuted, marginBottom: 10 }}>{p.title}</p>
@@ -249,147 +350,16 @@ export default function HomePage() {
             <div style={{ textAlign: "center", marginTop: 36 }}>
               <a href="/company/about" className="dd-arrow-link dd-link-hover" style={{
                 color: C.seawave, fontSize: 15, fontWeight: 500, textDecoration: "none",
-              }}>Meet the full team <span className="dd-arrow">{"\u2192"}</span></a>
+              }}>Meet the full team <span className="dd-arrow">{"→"}</span></a>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════
-           WHAT WORKING WITH US FEELS LIKE
-         ═══════════════════════════════════ */}
-      <section style={{ background: C.gray }}>
-        <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
-          <Reveal>
-            <h2 style={{
-              fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em",
-            }}>What working with us feels like</h2>
-          </Reveal>
-
-          <div className="dd-why-grid" style={{
-            display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20,
-            marginTop: 40,
-          }}>
-            {[
-              {
-                title: "You work with the people who do the work",
-                body: "The people in your kickoff are the people who deliver. No hand-offs, no ramp-up time — senior practitioners with 20+ years average experience from day one.",
-                accent: C.lemon,
-              },
-              {
-                title: "Your strategy becomes a working solution",
-                body: "The roadmap your board approves is the one that gets built. Strategy and implementation move together — so nothing ends up as a shelf document.",
-                accent: C.turquoise,
-              },
-              {
-                title: "Your projects move in weeks, not quarters",
-                body: "Our own AI tools accelerate every phase — from analysis to prototype to production. You get the speed of pre-built technology without buying software.",
-                accent: C.lemon,
-              },
-            ].map((item, i) => (
-              <Reveal key={i} delay={i * 0.06}>
-                <div style={{
-                  background: C.white, borderRadius: 16, padding: "28px 24px",
-                  borderTop: `3px solid ${item.accent}`,
-                  height: "100%",
-                  ...(i === 1 ? { marginTop: 24 } : {}),
-                }}>
-                  <h3 style={{
-                    fontSize: 17, fontWeight: 600, marginBottom: 10, lineHeight: 1.35,
-                  }}>{item.title}</h3>
-                  <p style={{
-                    fontSize: 14, lineHeight: 1.65, color: C.textMuted,
-                  }}>{item.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════
-           CLIENT PROOF
-         ═══════════════════════════════════ */}
-      <section className="dd-grain" style={{ background: `linear-gradient(to right, ${C.lemon}, ${C.turquoise})` }}>
-        <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: SECTION_PADDING }}>
-          <Reveal>
-            <h2 style={{
-              fontSize: 48, fontWeight: 400, marginBottom: 40, letterSpacing: "-0.02em",
-              textAlign: "center",
-            }}>Results from organizations like yours</h2>
-          </Reveal>
-
-          {/* Client logo strip */}
-          <Reveal delay={0.05}>
-            <div className="dd-clients-row" style={{
-              display: "flex", justifyContent: "center", gap: 12,
-              flexWrap: "wrap", marginBottom: 48, alignItems: "center",
-            }}>
-              {CLIENTS.map((client, i) => (
-                <div key={i} style={{
-                  background: C.white, borderRadius: PILL_BORDER_RADIUS,
-                  padding: client.logo ? "8px 20px" : "10px 24px",
-                  fontSize: 14, fontWeight: 500,
-                  color: C.black, border: `1px solid ${C.border}`,
-                  transition: "all 0.3s ease", cursor: "default",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                }}
-                  onMouseEnter={e => { e.currentTarget.style.background = C.lemon; e.currentTarget.style.borderColor = C.lemon; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = C.white; e.currentTarget.style.borderColor = C.border; }}
-                >
-                  {client.logo ? (
-                    <img src={client.logo} alt={client.name} style={{
-                      height: 22, width: "auto", objectFit: "contain",
-                    }} />
-                  ) : client.name}
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          {/* Spotlight testimonial — Tokmanni */}
-          <TestimonialSpotlight
-            quote="Our loyalty customers now get offers they care about. This means more visits, more sales, and 256% more coupon use. We turned customer insights into action — and real business results."
-            highlight="256% more coupon use."
-            name="Tuomas Vihavainen"
-            photo="/images/people/MikaAho.jpg"
-            title="Head of Group Analytics"
-            company="Tokmanni"
-            logo="/images/logos/Tokmanni_BW.png"
-          />
-
-          {/* Smaller testimonials */}
-          <div className="dd-testimonials-grid" style={{
-            display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 20,
-          }}>
-            <Reveal delay={0.1}>
-              <TestimonialCard
-                quote="The engagement was comprehensive and professionally planned, significantly advancing our AI development. The clarity of the workshops and tools was impressive."
-                name="Kati Kinnunen"
-                photo="/images/people/kati_kinnunen.png"
-                title="Chief Digital Officer"
-                company="Helen"
-                logo="/images/logos/Helen_BW.png"
-              />
-            </Reveal>
-            <Reveal delay={0.17}>
-              <TestimonialCard
-                quote="Data Design helped us take control of our master data. Their clear approach made our data more accurate and easier to manage."
-                name="Matti Nurmi"
-                photo="/images/people/MattiNurmi.png"
-                title="CIO"
-                company="Anora"
-                logo="/images/logos/Anora_BW.png"
-              />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
+      {/* 7. CTA. Get in touch */}
       <CTASection
-        heading="Not sure where to start?"
-        subtitle="In 30 minutes, you'll know your single highest-impact AI opportunity — and what it would take to make it real. No pitch, no pressure."
+        heading="Get in touch"
+        subtitle="In 30 minutes, you'll know your single highest-impact AI opportunity and what it would take to make it real. No pitch, no pressure."
         secondaryLabel="See how it works"
         secondaryHref="/services"
         image="/images/illustrations/DD-Illustration-4.png"

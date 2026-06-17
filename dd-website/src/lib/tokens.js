@@ -38,3 +38,52 @@ export const NAV_LINKS = [
     ],
   },
 ];
+
+// Suomenkielinen navigaatio. Linkit osoittavat vastaaville /fi-sivuille.
+export const NAV_LINKS_FI = [
+  { label: "Palvelut", href: "/fi/services" },
+  { label: "Ratkaisut", href: "/fi/solutions" },
+  { label: "Asiakastarinat", href: "/fi/customer-stories" },
+  { label: "Näkemykset", href: "/fi/insights" },
+  {
+    label: "Yritys",
+    children: [
+      { label: "Meistä", href: "/fi/company/about" },
+      { label: "Ura", href: "/fi/company/careers" },
+      { label: "Ota yhteyttä", href: "/fi/company/contact" },
+    ],
+  },
+];
+
+// Footer-linkit kielikohtaisesti
+export const FOOTER_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Customer Stories", href: "/customer-stories" },
+  { label: "Insights", href: "/insights" },
+  { label: "About Us", href: "/company/about" },
+  { label: "Careers", href: "/company/careers" },
+  { label: "Contact", href: "/company/contact" },
+];
+
+export const FOOTER_LINKS_FI = [
+  { label: "Etusivu", href: "/fi" },
+  { label: "Palvelut", href: "/fi/services" },
+  { label: "Ratkaisut", href: "/fi/solutions" },
+  { label: "Asiakastarinat", href: "/fi/customer-stories" },
+  { label: "Näkemykset", href: "/fi/insights" },
+  { label: "Meistä", href: "/fi/company/about" },
+  { label: "Ura", href: "/fi/company/careers" },
+  { label: "Ota yhteyttä", href: "/fi/company/contact" },
+];
+
+// UI-tekstit kielikohtaisesti
+export const UI_TEXTS = {
+  en: {
+    bookCall: "Book a call",
+  },
+  fi: {
+    bookCall: "Varaa keskustelu",
+  },
+};

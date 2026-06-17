@@ -83,7 +83,7 @@ Linked from the solutions index and services page:
 - `/solutions/intelligent-operations` — "Our operations are reactive — we find problems after they hit"
 - `/solutions/ai-native-transformation` — AI-native transformation
 - `/solutions/ai-accelerator` — AI Accelerator program
-- `/solutions/data-nanny` — Data Nanny tool
+- `/solutions/inrecipe` — InRecipe tool
 
 ## Offering Structure (Three Tiers)
 

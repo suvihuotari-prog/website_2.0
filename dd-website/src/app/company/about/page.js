@@ -77,7 +77,7 @@ export default function AboutPage() {
         gradient="lemon"
         badge="About Us"
         title="Your shortcut to becoming an AI-native organization"
-        subtitle="You go from early AI experiments to enterprise-wide transformation — with strategic clarity, deep data expertise, and hands-on delivery working together. Your project is senior-led and GenAI-accelerated from day one, so AI becomes part of how you operate — not just a side initiative."
+        subtitle="You go from early AI experiments to enterprise-wide transformation. With strategic clarity, deep data expertise, and hands-on delivery working together. Your project is senior-led and GenAI-accelerated from day one, so AI becomes part of how you operate. Not just a side initiative."
         image="/images/illustrations/DD-Illustration-1.png"
         primaryButton={{ label: "Book a free call", href: CALENDLY_URL }}
         secondaryButton={{ label: "See our services", href: "/services" }}
@@ -107,7 +107,7 @@ export default function AboutPage() {
                 <Reveal key={i} delay={i * 0.05}>
                   <div className="dd-portrait-card" style={{ display: "flex", flexDirection: "column" }}>
 
-                    {/* Portrait frame — 4:5 tall poster */}
+                    {/* Portrait frame. 4:5 tall poster */}
                     <div style={{
                       position: "relative", width: "100%", aspectRatio: "4 / 5",
                       borderRadius: 40, overflow: "hidden", marginBottom: 20,
@@ -135,7 +135,7 @@ export default function AboutPage() {
                         </div>
                       )}
 
-                      {/* LinkedIn — floats in, visible on hover */}
+                      {/* LinkedIn. Floats in, visible on hover */}
                       {person.linkedin && (
                         <a href={person.linkedin} target="_blank" rel="noopener noreferrer"
                           className="dd-portrait-linkedin"
@@ -155,7 +155,7 @@ export default function AboutPage() {
                       )}
                     </div>
 
-                    {/* Text content — no box, sits cleanly below */}
+                    {/* Text content. No box, sits cleanly below */}
                     <h3 style={{ fontSize: 22, fontWeight: 500, marginBottom: 4, lineHeight: 1.25, letterSpacing: "-0.01em" }}>
                       {person.name}
                     </h3>
@@ -214,7 +214,7 @@ export default function AboutPage() {
             {[
               {
                 title: "You skip the ramp-up",
-                body: "Your engagement starts with someone who's already shipped AI systems at H&M, Silo AI, and Deloitte. No training wheels — real experience from day one.",
+                body: "Your engagement starts with someone who's already shipped AI systems at H&M, Silo AI, and Deloitte. No training wheels. Real experience from day one.",
                 accent: C.lemon,
               },
               {
@@ -246,7 +246,7 @@ export default function AboutPage() {
       {/* CTA */}
       <CTASection
         heading="In 30 minutes, you'll know if we're the right fit"
-        subtitle="Whether you need a strategy sprint, a working AI solution, or senior people embedded in your team — you'll leave the call with clarity, not a sales pitch."
+        subtitle="Whether you need a strategy sprint, a working AI solution, or senior people embedded in your team. You'll leave the call with clarity, not a sales pitch."
         secondaryLabel="See open positions"
         secondaryHref="/company/careers"
         image="/images/illustrations/DD-Illustration-1.png"

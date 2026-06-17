@@ -1,19 +1,23 @@
 "use client";
 
-import { C, CONTAINER_MAX_WIDTH } from "@/lib/tokens";
-
-const FOOTER_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Customer Stories", href: "/customer-stories" },
-  { label: "Insights", href: "/insights" },
-  { label: "About Us", href: "/company/about" },
-  { label: "Careers", href: "/company/careers" },
-  { label: "Contact", href: "/company/contact" },
-];
+import { usePathname } from "next/navigation";
+import { C, CONTAINER_MAX_WIDTH, FOOTER_LINKS, FOOTER_LINKS_FI } from "@/lib/tokens";
+import { OPEN_EVENT } from "@/components/CookieConsent";
 
 export function Footer() {
+  const pathname = usePathname() || "/";
+  const isFi = pathname.startsWith("/fi");
+  const links = isFi ? FOOTER_LINKS_FI : FOOTER_LINKS;
+  const homeHref = isFi ? "/fi" : "/";
+  const rights = isFi ? "Kaikki oikeudet pidätetään." : "All rights reserved.";
+  const legalLinks = [
+    { label: isFi ? "Tietosuojaseloste" : "Privacy Policy", href: isFi ? "/fi/privacy-policy" : "/privacy-policy" },
+    { label: isFi ? "Käyttöehdot" : "Terms of Service", href: "#" },
+    {
+      label: isFi ? "Evästeasetukset" : "Cookies Settings",
+      onClick: () => window.dispatchEvent(new Event(OPEN_EVENT)),
+    },
+  ];
   return (
     <footer style={{ background: C.gray, padding: "60px 40px 40px" }}>
       <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto" }}>
@@ -22,13 +26,13 @@ export function Footer() {
           gap: 48, marginBottom: 48,
         }}>
           <div>
-            <a href="/" style={{ textDecoration: "none" }}>
+            <a href={homeHref} style={{ textDecoration: "none" }}>
               <img src="/images/logos/DD-Logo-Short.png" alt="Data Design" style={{ height: 150, width: "auto" }} />
             </a>
           </div>
           <div>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {FOOTER_LINKS.map(link => (
+              {links.map(link => (
                 <a key={link.label} href={link.href} className="dd-footer-link" style={{
                   color: C.black, textDecoration: "none", fontSize: 15,
                 }}>{link.label}</a>
@@ -70,12 +74,18 @@ export function Footer() {
           display: "flex", justifyContent: "space-between",
           alignItems: "center", flexWrap: "wrap", gap: 16,
         }}>
-          <span style={{ color: C.textMuted, fontSize: 14 }}>&copy; 2026 Data Design Oy. All rights reserved.</span>
+          <span style={{ color: C.textMuted, fontSize: 14 }}>&copy; 2026 Data Design Oy. {rights}</span>
           <div style={{ display: "flex", gap: 28 }}>
-            {["Privacy Policy", "Terms of Service", "Cookies Settings"].map(label => (
-              <a key={label} href="#" style={{
-                color: C.black, textDecoration: "underline", fontSize: 14, textUnderlineOffset: "3px",
-              }}>{label}</a>
+            {legalLinks.map(link => (
+              <a
+                key={link.label}
+                href={link.href || "#"}
+                onClick={link.onClick ? (e) => { e.preventDefault(); link.onClick(); } : undefined}
+                style={{
+                  color: C.black, textDecoration: "underline", fontSize: 14, textUnderlineOffset: "3px",
+                  cursor: "pointer",
+                }}
+              >{link.label}</a>
             ))}
           </div>
         </div>

@@ -42,44 +42,44 @@ export default function SolutionPricingOptimization() {
         breadcrumbLabel: "Pricing & Revenue Optimization",
         badge: "Pricing & Revenue Optimization",
         title: "Our pricing is leaving money on the table",
-        subtitle: "You have years of transaction data, customer behavior, and competitive signals — but your pricing still runs on spreadsheets and intuition. We build the models that turn that data into optimized prices, personalized offers, and better margins — live, in production, getting smarter every week.",
+        subtitle: "You have years of transaction data, customer behavior, and competitive signals. But your pricing still runs on spreadsheets and intuition. We build the models that turn that data into optimized prices, personalized offers, and better margins. Live, in production, getting smarter every week.",
       }}
       challenge={{
-        subtitle: "Pricing is one of the fastest levers for profit — but most teams can't move it fast enough.",
+        subtitle: "Pricing is one of the fastest levers for profit. But most teams can't move it fast enough.",
         items: [
-          { title: "Pricing by gut feel and last year's spreadsheet", body: "Your pricing team is experienced, but they're making thousands of decisions with a handful of data points. When product catalogs run into tens of thousands of SKUs, manual rules can't keep up — and every slow decision is margin left behind." },
-          { title: "Promotions that cost more than they earn", body: "Blanket discounts and one-size-fits-all campaigns spend marketing budget on customers who would have bought anyway — while missing the ones who just need the right offer. The result: lower margins and no clear signal of what actually worked." },
-          { title: "No way to test before you commit", body: "Price changes go live based on assumptions. You find out what worked — and what didn't — only after the quarter closes. Without a feedback loop, every pricing decision is a one-shot bet." },
+          { title: "Pricing by gut feel and last year's spreadsheet", body: "Your pricing team is experienced, but they're making thousands of decisions with a handful of data points. When product catalogs run into tens of thousands of SKUs, manual rules can't keep up. And every slow decision is margin left behind." },
+          { title: "Promotions that cost more than they earn", body: "Blanket discounts and one-size-fits-all campaigns spend marketing budget on customers who would have bought anyway. While missing the ones who just need the right offer. The result: lower margins and no clear signal of what actually worked." },
+          { title: "No way to test before you commit", body: "Price changes go live based on assumptions. You find out what worked. And what didn't. Only after the quarter closes. Without a feedback loop, every pricing decision is a one-shot bet." },
         ],
       }}
       steps={{
-        subtitle: "From transaction data to running pricing models in production — typically in 8–12 weeks.",
+        subtitle: "From transaction data to running pricing models in production. Typically in 8–12 weeks.",
         items: [
-          { step: "1", title: "Find where the margin is hiding", desc: "We start with your transaction history, customer segments, and product catalog. The goal isn't a generic analysis — it's finding the specific pricing decisions where a model will outperform manual rules. In one engagement, this initial analysis identified a 15–20% profit uplift opportunity that the client's team hadn't been able to quantify." },
-          { step: "2", title: "Build models matched to your pricing problem", desc: "There's no single pricing model. We've built auction-based dynamic pricing for wholesale, demand-driven personalized offers for retail loyalty, and predictive cost models for industrial service contracts. The model fits your business logic — not the other way around." },
+          { step: "1", title: "Find where the margin is hiding", desc: "We start with your transaction history, customer segments, and product catalog. The goal isn't a generic analysis. It's finding the specific pricing decisions where a model will outperform manual rules. In one engagement, this initial analysis identified a 15–20% profit uplift opportunity that the client's team hadn't been able to quantify." },
+          { step: "2", title: "Build models matched to your pricing problem", desc: "There's no single pricing model. We've built auction-based dynamic pricing for wholesale, demand-driven personalized offers for retail loyalty, and predictive cost models for industrial service contracts. The model fits your business logic. Not the other way around." },
           { step: "3", title: "Validate with controlled experiments", desc: "Models are tested against real data and, where possible, in controlled A/B tests before they touch production pricing. One retail engagement ran 9 months of continuous A/B testing across 800K customers to validate lift before scaling. You don't go live on faith." },
-          { step: "4", title: "Run in production and improve continuously", desc: "The model runs as part of your operations — integrated into your ERP, pricing system, or campaign workflow. Performance is tracked through dashboards, and models retrain as new data flows in. We've maintained production pricing systems for over a year with ongoing optimization runs." },
+          { step: "4", title: "Run in production and improve continuously", desc: "The model runs as part of your operations. Integrated into your ERP, pricing system, or campaign workflow. Performance is tracked through dashboards, and models retrain as new data flows in. We've maintained production pricing systems for over a year with ongoing optimization runs." },
         ],
       }}
       results={{
-        subtitle: "Production systems with measured business impact — not proof-of-concepts gathering dust.",
+        subtitle: "Production systems with measured business impact. Not proof-of-concepts gathering dust.",
         children: <>
           <Reveal delay={0.05}>
-            <CaseCard company="Tokmanni" logo="/images/logos/Tokmanni_BW.png" logoHeight={22} tag="Retail — personalized promotions"
-              description="Personalized coupon offers matched to individual customer behavior across 800K active loyalty customers. 256% increase in coupon usage, 5.3% more store visits, 3.5% sales increase — with improved margins from lower average discount amounts. Validated over 9 months of continuous A/B testing. The system runs in production on Azure and now extends to promotional leaflet optimization and assortment decisions."
-              quote="Our loyalty customers now get offers they care about. This means more visits, more sales, and 256% more coupon use. We turned customer insights into action — and real business results."
+            <CaseCard company="Tokmanni" logo="/images/logos/Tokmanni_BW.png" logoHeight={22} tag="Retail. Personalized promotions"
+              description="Personalized coupon offers matched to individual customer behavior across 800K active loyalty customers. 256% increase in coupon usage, 5.3% more store visits, 3.5% sales increase. With improved margins from lower average discount amounts. Validated over 9 months of continuous A/B testing. The system runs in production on Azure and now extends to promotional leaflet optimization and assortment decisions."
+              quote="Our loyalty customers now get offers they care about. This means more visits, more sales, and 256% more coupon use. We turned customer insights into action. And real business results."
               quoteName="Tuomas Vihavainen"
               quoteTitle="Head of Group Analytics, Tokmanni"
             />
           </Reveal>
           <Reveal delay={0.1}>
-            <CaseCard company="Kirjastopalvelu" tag="Wholesale & Distribution — dynamic pricing"
-              description="AI-powered auction pricing for a book and media wholesaler. The model optimizes dynamically based on demand patterns and inventory levels, delivering 15–20% profit increase and 10%+ sales volume growth. Built from scratch — data analysis, feature engineering, model development, and production deployment — in under six months."
+            <CaseCard company="Kirjastopalvelu" tag="Wholesale & Distribution. Dynamic pricing"
+              description="AI-powered auction pricing for a book and media wholesaler. The model optimizes dynamically based on demand patterns and inventory levels, delivering 15–20% profit increase and 10%+ sales volume growth. Built from scratch. Data analysis, feature engineering, model development, and production deployment. In under six months."
             />
           </Reveal>
           <Reveal delay={0.15}>
-            <CaseCard company="Sarlin" tag="Industrial Services — contract pricing"
-              description="Predictive pricing model for maintenance contracts in industrial HVAC and pumping systems. The model uses equipment data, usage patterns, and historical maintenance costs to price service agreements more accurately — replacing manual estimation with data-driven contract pricing. Built through a design sprint and pilot in 12 weeks."
+            <CaseCard company="Sarlin" tag="Industrial Services. Contract pricing"
+              description="Predictive pricing model for maintenance contracts in industrial HVAC and pumping systems. The model uses equipment data, usage patterns, and historical maintenance costs to price service agreements more accurately. Replacing manual estimation with data-driven contract pricing. Built through a design sprint and pilot in 12 weeks."
             />
           </Reveal>
         </>,
@@ -94,9 +94,9 @@ export default function SolutionPricingOptimization() {
         ],
       }}
       deliverables={{
-        subtitle: "A working pricing model in production — not a slide deck about what could be possible.",
+        subtitle: "A working pricing model in production. Not a slide deck about what could be possible.",
         items: [
-          "Pricing models built on your transaction data and business rules — not generic templates",
+          "Pricing models built on your transaction data and business rules. Not generic templates",
           "Integration into your existing pricing workflow, ERP, or campaign system",
           "A/B testing framework to validate impact before full rollout",
           "Performance dashboards tracking margin, volume, and model accuracy",

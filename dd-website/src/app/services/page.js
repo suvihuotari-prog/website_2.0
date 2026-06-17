@@ -4,13 +4,12 @@ import { useState } from "react";
 import { C, CALENDLY_URL, CONTAINER_MAX_WIDTH, SECTION_PADDING, PILL_BORDER_RADIUS, CARD_BORDER_RADIUS } from "@/lib/tokens";
 import { Reveal } from "@/components/Reveal";
 import { HeroSection } from "@/components/HeroSection";
-import { CountUp } from "@/components/CountUp";
 import { CTASection } from "@/components/CTASection";
 import { TestimonialSpotlight } from "@/components/TestimonialSpotlight";
 import { TestimonialCard } from "@/components/TestimonialCard";
 
 /* ══════════════════════════════════════════════
-   Journey phases — interactive timeline
+   Journey phases. Interactive timeline
    ══════════════════════════════════════════════ */
 const JOURNEY_PHASES = [
   {
@@ -19,15 +18,15 @@ const JOURNEY_PHASES = [
     heading: "You know exactly where AI creates the most value",
     description: "Your business processes are mapped, highest-impact opportunities identified, and a roadmap built that your board will approve. You stop guessing and start with clarity.",
     modes: [
-      { tag: "Advisory", color: C.lemon, text: "AI strategy sprint — use case discovery, prioritization, investment-ready business cases" },
+      { tag: "Advisory", color: C.lemon, text: "AI strategy sprint. Use case discovery, prioritization, investment-ready business cases" },
     ],
-    outcome: "You leave with a prioritized AI roadmap and a clear first project — approved and funded.",
+    outcome: "You leave with a prioritized AI roadmap and a clear first project. Approved and funded.",
     organization: "Leadership is aligned on AI priorities. The team that will own the first project is identified.",
   },
   {
     label: "Prove value fast",
     timeframe: "Months 1–3",
-    heading: "Your first AI solution is live — and your board sees the results",
+    heading: "Your first AI solution is live. And your board sees the results",
     description: "The highest-priority use case goes from concept to production. The solution connects to broader business goals while delivering measurable results your organization can see.",
     modes: [
       { tag: "Implementation", color: C.turquoise, text: "First AI solution built, tested, and deployed to production" },
@@ -40,27 +39,27 @@ const JOURNEY_PHASES = [
     label: "Scale across the business",
     timeframe: "Months 3–12",
     heading: "AI spreads from one win to multiple business areas",
-    description: "With the first win proven, you expand. Multiple projects run in parallel — new use cases, new teams, new data domains. Each project builds toward an enterprise-wide capability, not a collection of disconnected experiments.",
+    description: "With the first win proven, you expand. Multiple projects run in parallel. New use cases, new teams, new data domains. Each project builds toward an enterprise-wide capability, not a collection of disconnected experiments.",
     modes: [
       { tag: "Implementation", color: C.turquoise, text: "Multiple AI projects running in parallel across business areas" },
       { tag: "Embedded Resources", color: C.beige, text: "Data engineers and ML engineers accelerate your delivery capacity" },
       { tag: "Advisory", color: C.lemon, text: "Enterprise AI vision, data governance, organizational readiness" },
     ],
     outcome: "AI is working in multiple areas, your internal team is growing stronger, and the ROI compounds.",
-    organization: "Data governance is in place. Roles are evolving — some people now manage AI processes instead of doing the work manually. You have a repeatable way to evaluate, build, and launch AI solutions. Internal capability is growing.",
+    organization: "Data governance is in place. Roles are evolving. Some people now manage AI processes instead of doing the work manually. You have a repeatable way to evaluate, build, and launch AI solutions. Internal capability is growing.",
   },
   {
     label: "AI becomes your operating model",
     timeframe: "Year 1+",
-    heading: "AI isn't a project anymore — it's how your organization works",
+    heading: "AI isn't a project anymore. It's how your organization works",
     description: "AI runs core processes, informs every major decision, and enables business models your competitors can't replicate. Your team owns it.",
     modes: [
       { tag: "Embedded Resources", color: C.beige, text: "Interim AI leadership shapes your organization and culture" },
       { tag: "Implementation", color: C.turquoise, text: "AI-native processes running autonomously at scale" },
       { tag: "Advisory", color: C.lemon, text: "Continuous strategy evolution as new opportunities emerge" },
     ],
-    outcome: "You operate as an AI-native organization — with capabilities that couldn't exist without AI at the core.",
-    organization: "AI is everyone's tool, not the data team's project. Decision rights are clear. New hires are expected to work with AI from day one. Your operating model has fundamentally changed — and your competitors are still running pilots.",
+    outcome: "You operate as an AI-native organization. With capabilities that couldn't exist without AI at the core.",
+    organization: "AI is everyone's tool, not the data team's project. Decision rights are clear. New hires are expected to work with AI from day one. Your operating model has fundamentally changed. And your competitors are still running pilots.",
   },
 ];
 
@@ -76,11 +75,11 @@ function JourneySection() {
             Your journey to AI-native
           </h2>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 640, marginBottom: 52 }}>
-            Every organization's path is different, but the pattern is the same — start focused, prove value, then scale deliberately.
+            Every organization's path is different, but the pattern is the same. Start focused, prove value, then scale deliberately.
           </p>
         </Reveal>
 
-        {/* Phase selector — interactive timeline */}
+        {/* Phase selector. Interactive timeline */}
         <Reveal delay={0.1}>
           <div style={{ position: "relative", marginBottom: 40 }}>
             {/* Connecting line */}
@@ -211,13 +210,6 @@ function JourneySection() {
   );
 }
 
-const STATS = [
-  { number: "€200M+", label: "Revenue impact created for clients" },
-  { number: "30+", label: "AI strategies approved by boards" },
-  { number: "100+", label: "Companies accelerated" },
-  { number: "Weeks", label: "From kickoff to results" },
-];
-
 export default function ServicesPage() {
   return (
     <>
@@ -229,35 +221,10 @@ export default function ServicesPage() {
         blobs={2}
         image="/images/illustrations/DD-Illustration-2.png"
         title="Your path from first AI win to AI-native organization"
-        subtitle="Start with a single high-impact problem. See results in weeks. Then scale AI across your business — with strategy and implementation moving together, not apart."
+        subtitle="Start with a single high-impact problem. See results in weeks. Then scale AI across your business. With strategy and implementation moving together, not apart."
         primaryButton={{ label: "Book a free call", href: CALENDLY_URL }}
         secondaryButton={{ label: "See customer stories", href: "/customer-stories" }}
-      >
-        {/* Stats strip */}
-        <div style={{ maxWidth: CONTAINER_MAX_WIDTH, margin: "0 auto", padding: "48px 40px 80px" }}>
-          <Reveal delay={0.15} direction="scale">
-            <div className="dd-stats-grid" style={{
-              display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 0,
-              background: C.white, borderRadius: CARD_BORDER_RADIUS,
-              border: `1px solid ${C.border}`, overflow: "hidden",
-            }}>
-              {STATS.map((s, i) => (
-                <div key={i} style={{
-                  padding: i === 0 ? "32px 28px" : "28px 24px", textAlign: "center",
-                  borderRight: i < 3 ? `1px solid ${C.border}` : "none",
-                }}>
-                  <div style={{ fontSize: i === 0 ? 44 : 32, fontWeight: i === 0 ? 700 : 600, letterSpacing: "-0.02em", marginBottom: 4 }}>
-                    <CountUp value={s.number} />
-                  </div>
-                  <div style={{ fontSize: 13, color: C.textMuted, fontWeight: 400 }}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </HeroSection>
+      />
 
       {/* YOUR PATH TO AI-NATIVE */}
       <section style={{ background: C.white }}>
@@ -282,33 +249,33 @@ export default function ServicesPage() {
                 {
                   level: "1",
                   title: "Automation",
-                  tagline: "AI does what a human would — faster",
-                  desc: "Document processing, report generation, data entry — handled automatically. Important, but this is digitalization with an AI layer.",
+                  tagline: "AI does what a human would. Faster",
+                  desc: "Document processing, report generation, data entry. Handled automatically. Important, but this is digitalization with an AI layer.",
                   people: "A small team runs AI projects. The rest of the organization watches from a distance.",
                   outcome: "Your team stops doing work a machine should handle.",
                 },
                 {
                   level: "2",
                   title: "Data-driven decisions",
-                  tagline: "AI recommends — humans decide",
-                  desc: "Where to invest, how to price, which customers to prioritize. Your people still make the call — but AI shows what they'd otherwise miss.",
+                  tagline: "AI recommends. Humans decide",
+                  desc: "Where to invest, how to price, which customers to prioritize. Your people still make the call. But AI shows what they'd otherwise miss.",
                   people: "Business teams start trusting and using AI outputs in their daily decisions. Data literacy grows.",
                   outcome: "Better decisions because you see what was previously invisible.",
                 },
                 {
                   level: "3",
                   title: "Autonomous operations",
-                  tagline: "AI runs the process — humans handle exceptions",
+                  tagline: "AI runs the process. Humans handle exceptions",
                   desc: "AI manages end-to-end by default. Your team steps in only when judgment is needed. This is where real AI-native operations begin.",
                   people: "Roles shift from doing the work to managing AI that does the work. New capabilities emerge: AI oversight, exception handling, continuous improvement.",
-                  outcome: "Processes run without human intervention — your team focuses on the work that actually requires them.",
+                  outcome: "Processes run without human intervention. Your team focuses on the work that actually requires them.",
                 },
                 {
                   level: "4",
                   title: "Emergent business",
                   tagline: "AI enables what couldn't exist without it",
                   desc: "Entirely new service models, revenue streams, and business logic that simply couldn't exist without AI and data at the core.",
-                  people: "AI thinking is embedded in how the entire organization innovates, decides, and operates. It's no longer a function — it's a capability everyone uses.",
+                  people: "AI thinking is embedded in how the entire organization innovates, decides, and operates. It's no longer a function. It's a capability everyone uses.",
                   outcome: "You do something your competitors can't do at all.",
                 },
               ].map((item, i) => (
@@ -348,7 +315,7 @@ export default function ServicesPage() {
           <Reveal delay={0.25}>
             <div style={{ textAlign: "center", marginTop: 32, padding: "20px 28px", background: C.beige, borderRadius: 14 }}>
               <p style={{ fontSize: 14.5, color: C.textMuted, lineHeight: 1.6 }}>
-                Most organizations are at Level 1 or 2 — and that's exactly the right place to start. You move up deliberately, proving value at each stage before scaling further.
+                Most organizations are at Level 1 or 2. And that's exactly the right place to start. You move up deliberately, proving value at each stage before scaling further.
               </p>
             </div>
           </Reveal>
@@ -361,7 +328,7 @@ export default function ServicesPage() {
           <Reveal>
             <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 12, letterSpacing: "-0.02em" }}>Three ways to get there</h2>
             <p style={{ fontSize: 17, lineHeight: 1.6, color: C.textMuted, maxWidth: 640, marginBottom: 52 }}>
-              Whether you need clarity on where to start, a working solution in production, or experienced people inside your team — you choose how deep we go.
+              Whether you need clarity on where to start, a working solution in production, or experienced people inside your team. You choose how deep we go.
             </p>
           </Reveal>
 
@@ -369,9 +336,9 @@ export default function ServicesPage() {
             <Reveal delay={0.05}>
               <div style={{ background: C.white, borderRadius: CARD_BORDER_RADIUS, padding: "40px 32px", border: `1px solid ${C.border}`, height: "100%" }}>
                 <div style={{ display: "inline-flex", padding: "6px 16px", borderRadius: PILL_BORDER_RADIUS, background: C.lemon, fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 20 }}>Advisory</div>
-                <h3 style={{ fontSize: 22, fontWeight: 400, marginBottom: 14, letterSpacing: "-0.01em" }}>You know exactly what to do — and why</h3>
+                <h3 style={{ fontSize: 22, fontWeight: 400, marginBottom: 14, letterSpacing: "-0.01em" }}>You know exactly what to do. And why</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: C.textMuted, marginBottom: 24 }}>
-                  Walk away with a prioritized AI roadmap, investment-ready business cases, and the confidence to move forward — in weeks, not quarters.
+                  Walk away with a prioritized AI roadmap, investment-ready business cases, and the confidence to move forward. In weeks, not quarters.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
                   {["AI strategy & use case prioritization", "Business case development with clear ROI", "Data governance & ownership models", "Technology assessment & architecture", "Management workshops & training"].map((item, i) => (
@@ -386,10 +353,10 @@ export default function ServicesPage() {
                   <p style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", color: `${C.black}66`, marginBottom: 12 }}>Proven formats</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                     <p style={{ fontSize: 13, lineHeight: 1.55, color: C.textMuted }}>
-                      <strong style={{ color: C.black }}>Data & AI Strategy Sprint</strong> — From zero to board-ready AI roadmap in 6–8 weeks. 30+ delivered.
+                      <strong style={{ color: C.black }}>Data & AI Strategy Sprint</strong>. From zero to board-ready AI roadmap in 6–8 weeks. 30+ delivered.
                     </p>
                     <p style={{ fontSize: 13, lineHeight: 1.55, color: C.textMuted }}>
-                      <strong style={{ color: C.black }}>AI Accelerator Program</strong> — Your leadership team goes from AI-curious to AI-ready in 1–2 days. 100+ companies trained. <a href="/solutions/ai-accelerator" className="dd-link-hover" style={{ color: C.seawave, fontWeight: 500, textDecoration: "none" }}>Learn more →</a>
+                      <strong style={{ color: C.black }}>AI Accelerator Program</strong>. Your leadership team goes from AI-curious to AI-ready in 1–2 days. 100+ companies trained. <a href="/solutions/ai-accelerator" className="dd-link-hover" style={{ color: C.seawave, fontWeight: 500, textDecoration: "none" }}>Learn more →</a>
                     </p>
                   </div>
                 </div>
@@ -399,9 +366,9 @@ export default function ServicesPage() {
             <Reveal delay={0.1}>
               <div style={{ background: C.white, borderRadius: CARD_BORDER_RADIUS, padding: "40px 32px", border: `1px solid ${C.border}`, height: "100%" }}>
                 <div style={{ display: "inline-flex", padding: "6px 16px", borderRadius: PILL_BORDER_RADIUS, background: C.turquoise, fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 20 }}>Implementation</div>
-                <h3 style={{ fontSize: 22, fontWeight: 400, marginBottom: 14, letterSpacing: "-0.01em" }}>Your AI solution is live — and delivering results</h3>
+                <h3 style={{ fontSize: 22, fontWeight: 400, marginBottom: 14, letterSpacing: "-0.01em" }}>Your AI solution is live. And delivering results</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: C.textMuted, marginBottom: 24 }}>
-                  Go from concept to measurable impact — a working solution your teams actually use, with the data pipelines and monitoring to keep it running.
+                  Go from concept to measurable impact. A working solution your teams actually use, with the data pipelines and monitoring to keep it running.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 24 }}>
                   {["Custom ML & GenAI model development", "Data engineering & pipeline design", "Production deployment & MLOps", "Solution integration & change management", "Ongoing support & model monitoring"].map((item, i) => (
@@ -420,9 +387,9 @@ export default function ServicesPage() {
             <Reveal delay={0.15}>
               <div style={{ background: C.white, borderRadius: CARD_BORDER_RADIUS, padding: "40px 32px", border: `1px solid ${C.border}`, height: "100%" }}>
                 <div style={{ display: "inline-flex", padding: "6px 16px", borderRadius: PILL_BORDER_RADIUS, background: C.beige, fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 20 }}>Embedded Resources</div>
-                <h3 style={{ fontSize: 22, fontWeight: 400, marginBottom: 14, letterSpacing: "-0.01em" }}>You have senior AI expertise on your team — tomorrow</h3>
+                <h3 style={{ fontSize: 22, fontWeight: 400, marginBottom: 14, letterSpacing: "-0.01em" }}>You have senior AI expertise on your team. Tomorrow</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.65, color: C.textMuted, marginBottom: 24 }}>
-                  An experienced practitioner sits inside your organization — leading projects, building capabilities, and transferring knowledge from day one. When the engagement ends, your team is stronger than when it started.
+                  An experienced practitioner sits inside your organization. Leading projects, building capabilities, and transferring knowledge from day one. When the engagement ends, your team is stronger than when it started.
                 </p>
                 <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                   {["Interim CDO, AI lead, or data lead", "Senior practitioners embedded in your team", "Data engineers & ML engineers for projects", "Knowledge transfer & capability building", "Flexible engagement models"].map((item, i) => (
@@ -440,7 +407,7 @@ export default function ServicesPage() {
           <Reveal delay={0.2}>
             <div style={{ textAlign: "center", marginTop: 32, padding: "20px 28px", background: "rgba(255,255,255,0.7)", borderRadius: 14 }}>
               <p style={{ fontSize: 14.5, color: C.textMuted, lineHeight: 1.6 }}>
-                Most engagements start with a focused advisory phase, then move into implementation. You can also bring us in mid-journey if you already know what needs building — or embed our people to accelerate what you've already started.
+                Most engagements start with a focused advisory phase, then move into implementation. You can also bring us in mid-journey if you already know what needs building. Or embed our people to accelerate what you've already started.
               </p>
             </div>
           </Reveal>
@@ -462,10 +429,10 @@ export default function ServicesPage() {
 
           <div className="dd-steps-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
             {[
-              { step: "1", title: "You describe the challenge", desc: "A 30-minute call where you walk us through what you're trying to solve. You'll know if this is worth pursuing — and what the fastest path looks like." },
-              { step: "2", title: "You leave with a plan", desc: "A focused scoping workshop — usually 1–2 days. You walk out with a defined problem, a clear data picture, and an approach you believe in." },
+              { step: "1", title: "You describe the challenge", desc: "A 30-minute call where you walk us through what you're trying to solve. You'll know if this is worth pursuing. And what the fastest path looks like." },
+              { step: "2", title: "You leave with a plan", desc: "A focused scoping workshop. Usually 1–2 days. You walk out with a defined problem, a clear data picture, and an approach you believe in." },
               { step: "3", title: "You decide, we move", desc: "You see exact scope, timeline, team, and investment. No surprises. You give the green light, results start fast." },
-              { step: "4", title: "You show your board results", desc: "You have something working, something measurable, and something you can present — not a report that sits on a shelf." },
+              { step: "4", title: "You show your board results", desc: "You have something working, something measurable, and something you can present. Not a report that sits on a shelf." },
             ].map((item, i) => (
               <Reveal key={i} delay={i * 0.15} direction="scale">
                 <div style={{ background: C.white, borderRadius: 16, padding: "28px 24px", height: "100%" }}>
@@ -498,18 +465,17 @@ export default function ServicesPage() {
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20,
           }}>
             {[
-              { title: "You work with the people who do the work", body: "The people in your kickoff are the people who deliver. Every project is senior-led from day one — practitioners with 20+ years average experience who've built and shipped AI at scale.", accent: C.lemon },
-              { title: "Your strategy becomes a working solution", body: "The roadmap your board approves is the one that gets built. Strategy and implementation move together — so nothing gets lost in translation between firms.", accent: C.turquoise },
-              { title: "Your projects move in weeks, not quarters", body: "Our own AI tools accelerate every phase — from analysis to prototype to production. You get the speed of pre-built technology without buying software.", accent: C.lemon },
-              { title: "Your investment targets the right problem first", body: "Impact is quantified before anything gets built, so you invest where it matters most. Start from the business process, map the value, then build — not the other way around.", accent: C.turquoise },
-              { title: "You pay for results, not layers of management", body: "Lean team, fast decisions, direct access to the people doing the work. Your investment goes to senior expertise and delivery — not overhead.", accent: C.lemon },
-              { title: "Your team learns to run it without us", body: "Every engagement is built around co-creation and capability transfer. When it ends, you own the solution and the skills — not a dependency.", accent: C.turquoise },
+              { title: "You work with the people who do the work", body: "The people in your kickoff are the people who deliver. Every project is senior-led from day one. Practitioners with 20+ years average experience who've built and shipped AI at scale.", accent: C.lemon },
+              { title: "Your strategy becomes a working solution", body: "The roadmap your board approves is the one that gets built. Strategy and implementation move together. So nothing gets lost in translation between firms.", accent: C.turquoise },
+              { title: "Your projects move in weeks, not quarters", body: "Our own AI tools accelerate every phase. From analysis to prototype to production. You get the speed of pre-built technology without buying software.", accent: C.lemon },
+              { title: "Your investment targets the right problem first", body: "Impact is quantified before anything gets built, so you invest where it matters most. Start from the business process, map the value, then build. Not the other way around.", accent: C.turquoise },
+              { title: "You pay for results, not layers of management", body: "Lean team, fast decisions, direct access to the people doing the work. Your investment goes to senior expertise and delivery. Not overhead.", accent: C.lemon },
+              { title: "Your team learns to run it without us", body: "Every engagement is built around co-creation and capability transfer. When it ends, you own the solution and the skills. Not a dependency.", accent: C.turquoise },
             ].map((item, i) => (
               <Reveal key={i} delay={i * 0.05} direction={i < 3 ? "left" : "right"}>
                 <div style={{
                   background: C.gray, borderRadius: 16, padding: "28px 24px",
                   borderTop: `3px solid ${item.accent}`, height: "100%",
-                  marginTop: i % 2 === 1 ? 24 : 0,
                 }}>
                   <h3 style={{ fontSize: 17, fontWeight: 600, marginBottom: 10, lineHeight: 1.35 }}>{item.title}</h3>
                   <p style={{ fontSize: 14, lineHeight: 1.65, color: C.textMuted }}>{item.body}</p>
@@ -527,9 +493,9 @@ export default function ServicesPage() {
             <h2 style={{ fontSize: 48, fontWeight: 400, marginBottom: 48, letterSpacing: "-0.02em" }}>What our clients say</h2>
           </Reveal>
 
-          {/* Featured testimonial — spotlight */}
+          {/* Featured testimonial. Spotlight */}
           <TestimonialSpotlight
-            quote="Our loyalty customers now get offers they care about. This means more visits, more sales, and 256% more coupon use. We turned customer insights into action — and real business results."
+            quote="Our loyalty customers now get offers they care about. This means more visits, more sales, and 256% more coupon use. We turned customer insights into action. And real business results."
             highlight="256% more coupon use."
             name="Tuomas Vihavainen"
             title="Head of Group Analytics"
@@ -563,7 +529,7 @@ export default function ServicesPage() {
       {/* CTA */}
       <CTASection
         heading="Not sure where to start?"
-        subtitle="In 30 minutes, you'll know your single highest-impact AI opportunity — and what it would take to make it real. No pitch, no pressure."
+        subtitle="In 30 minutes, you'll know your single highest-impact AI opportunity. And what it would take to make it real. No pitch, no pressure."
         secondaryLabel="See our solutions"
         secondaryHref="/solutions"
         image="/images/illustrations/DD-Illustration-2.png"

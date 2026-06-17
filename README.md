@@ -9,7 +9,10 @@ Marketing website for **Data Design Oy** — a Finnish AI advisory & implementat
 - **Next.js 15** (App Router) + **React 19**
 - **framer-motion** — scroll/entrance animations
 - **lenis** — smooth scrolling
-- **next/font/google** — DM Sans (body), Host Grotesk (display), DM Serif Display (serif)
+- **next/font/google** — Host Grotesk (single typeface across the site)
+- **next-intl** — Finnish/English localization; the site ships a full `/fi` mirror of every page
+- **MDX content** — customer stories and insights authored as bilingual `.mdx` files (`next-mdx-remote` + `gray-matter`)
+- **SEO** — dynamic `sitemap.js` + `robots.js`, per-page metadata, canonical/hreflang
 - Styling: **inline React styles** + a shared token module ([`dd-website/src/lib/tokens.js`](dd-website/src/lib/tokens.js)) + minimal `globals.css`. No CSS modules, no Tailwind.
 - Deployed on **Vercel**.
 
@@ -36,13 +39,17 @@ npm run start    # serve the production build
 .
 ├── CLAUDE.md                 # Project guide: brand, voice, proof points, design patterns
 ├── README.md                 # You are here
-├── dd-website/               # The Next.js app (deployable)
+├── dd-website/               # The Next.js app (deployable — Vercel Root Directory)
 │   ├── src/
-│   │   ├── app/              # App Router pages (see Pages below)
+│   │   ├── app/              # App Router pages incl. /fi mirror, sitemap.js, robots.js
 │   │   ├── components/       # ~25 shared components (Navbar, Footer, cards, Reveal…)
-│   │   ├── lib/tokens.js     # Brand colors, layout constants, nav links, Calendly URL
-│   │   └── app/globals.css   # Global resets and CSS variables
+│   │   ├── lib/              # tokens.js (brand), mdx.js (content loader), seo.js, translations.js
+│   │   ├── i18n/             # next-intl config
+│   │   └── middleware.js     # i18n middleware (currently inactive placeholder)
+│   ├── content/              # Bilingual MDX: cases/*.{en,fi}.mdx, insights/*.{en,fi}.mdx
+│   ├── messages/             # next-intl UI strings (en, fi)
 │   ├── public/images/        # Logos, people photos, illustrations
+│   ├── next.config.js        # Webflow → new 301 redirects
 │   └── docs/                 # In-app planning docs (design upgrade, refactoring)
 ├── docs/                     # Copy & reference docs (services copy, copy rules, design skill)
 └── *.jsx                     # Original standalone prototypes — see note below
@@ -50,30 +57,23 @@ npm run start    # serve the production build
 
 ### Pages (`dd-website/src/app/`)
 
+Every route ships in English and Finnish — the Finnish mirror lives under `/fi` (e.g. `/services` ↔ `/fi/services`).
+
 | Route | Page |
 |---|---|
 | `/` | Home |
 | `/services` | Services |
 | `/solutions` | Solutions index |
-| `/solutions/ai-strategy` | Solution: AI strategy |
-| `/solutions/pricing-optimization` | Solution: pricing optimization |
-| `/solutions/customer-intelligence` | Solution: customer intelligence |
-| `/solutions/data-governance` | Solution: data governance |
-| `/solutions/genai-automation` | Solution: GenAI & automation |
-| `/solutions/intelligent-operations` | Solution: intelligent operations |
-| `/solutions/ai-native-transformation` | Solution: AI-native transformation |
-| `/solutions/ai-accelerator` | Accelerator program |
-| `/solutions/data-nanny` | Data Nanny tool |
+| `/solutions/<slug>` | 9 solution/program subpages: `ai-strategy`, `pricing-optimization`, `customer-intelligence`, `data-governance`, `genai-automation`, `intelligent-operations`, `ai-native-transformation`, `ai-accelerator`, `inrecipe` |
 | `/customer-stories` | Customer stories index |
-| `/customer-stories/tokmanni` | Case study: Tokmanni |
+| `/customer-stories/[slug]` | Case study (MDX-driven, ~16 stories) |
 | `/insights` | Insights index |
-| `/insights/clarifying-data-ownership` | Insight article |
+| `/insights/[slug]` | Insight article (MDX-driven, ~16 articles) |
 | `/company/about` | About |
 | `/company/careers` | Careers |
 | `/company/careers/senior-data-analyst` | Job posting |
 | `/company/contact` | Contact |
-
-Routes prefixed `dev_` (e.g. `dev_home`, `dev_services`) are work-in-progress drafts, not linked from navigation.
+| `/privacy-policy` | Privacy policy |
 
 ### A note on the root-level `.jsx` files
 
@@ -82,6 +82,8 @@ The files at the repo root — [`services-page.jsx`](services-page.jsx), [`home-
 ## Deployment
 
 The app is deployed on Vercel. Because the Next.js project lives in the `dd-website/` subdirectory (not the repo root), the Vercel project's **Root Directory** must be set to `dd-website`.
+
+Set the environment variable **`NEXT_PUBLIC_SITE_URL`** (e.g. `https://www.datadesign.fi`) in Vercel — it drives the canonical URLs, `sitemap.xml`, and `robots.txt`. Legacy Webflow URLs are handled by 301 redirects in `next.config.js`.
 
 ## Contact / brand details
 

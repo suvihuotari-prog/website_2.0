@@ -1,6 +1,15 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
+/* ── Single typeface: every font variable resolves to Host Grotesk ── */
+:root {
+  --font-body: var(--font-display);
+  --font-serif: var(--font-display);
+}
+
+/* Form controls don't inherit font-family by default — force them to Host Grotesk */
+button, input, select, textarea { font-family: inherit; }
+
 /* ── Typography: Host Grotesk Bold for headings ── */
 h1, h2, .dd-hero-h1 {
   font-family: var(--font-display), "Arial Black", sans-serif;
@@ -323,7 +332,8 @@ h1, h2, .dd-hero-h1 {
 }
 
 /* ── Drop cap ── */
-.dd-article-body .dd-drop-cap::first-letter {
+.dd-article-body .dd-drop-cap::first-letter,
+.dd-article-body .dd-drop-cap > p:first-of-type::first-letter {
   float: left;
   font-family: var(--font-serif), Georgia, serif;
   font-size: 4.2em;
@@ -332,6 +342,16 @@ h1, h2, .dd-hero-h1 {
   padding-top: 6px;
   color: #000000;
   font-weight: 400;
+}
+
+/* ArticleLead / ArticleQuote render as <div> wrappers (so MDX's inner <p>
+   doesn't nest inside a <p>). Make that inner paragraph adopt the wrapper's
+   typography instead of the default body-paragraph styling. */
+.dd-article-body .dd-article-lead > p,
+.dd-article-body .dd-article-quote-body > p {
+  font: inherit !important;
+  color: inherit !important;
+  margin: 0 !important;
 }
 
 /* ── Article serif headings ── */
@@ -365,6 +385,15 @@ h1, h2, .dd-hero-h1 {
 }
 .dd-article-hero-img:hover {
   transform: scale(1.015);
+}
+
+/* ── Article body lists (ul/ol from MDX) ── */
+.dd-article-list li::marker {
+  color: #537f7b;
+  font-weight: 600;
+}
+.dd-article-list li + li {
+  margin-top: 2px;
 }
 
 /* ── Author card hover ── */

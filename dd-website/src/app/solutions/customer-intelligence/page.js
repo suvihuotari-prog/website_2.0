@@ -13,23 +13,23 @@ export default function SolutionCustomerIntelligence() {
         breadcrumbLabel: "Customer Intelligence",
         badge: "Customer Intelligence",
         title: "We don't really know our customers well enough",
-        subtitle: "Customer data sits in your systems but isn't working for you. You need to turn fragmented information into real insight — personalized recommendations, churn predictions, and a shared customer memory your whole team can use.",
+        subtitle: "Customer data sits in your systems but isn't working for you. You need to turn fragmented information into real insight. Personalized recommendations, churn predictions, and a shared customer memory your whole team can use.",
       }}
       challenge={{
-        subtitle: "You have customer data — but it's not working for you. The insights you need are buried across disconnected systems.",
+        subtitle: "You have customer data. But it's not working for you. The insights you need are buried across disconnected systems.",
         items: [
           { title: "Customer data scattered across systems", body: "CRM says one thing, your support tool another. Sales reps build knowledge in their heads, not in systems. When they leave, institutional memory goes with them." },
-          { title: "Generic customer interactions", body: "Every customer gets the same experience. You know they're different, but your systems can't tell you how — or what each one actually needs." },
+          { title: "Generic customer interactions", body: "Every customer gets the same experience. You know they're different, but your systems can't tell you how. Or what each one actually needs." },
           { title: "Churn you only see in hindsight", body: "By the time you notice a customer is leaving, they've already decided. You need signals that predict churn before it happens." },
         ],
       }}
       steps={{
-        subtitle: "From fragmented data to actionable customer insight — a systematic approach that puts intelligence into your team's daily workflows.",
+        subtitle: "From fragmented data to actionable customer insight. A systematic approach that puts intelligence into your team's daily workflows.",
         items: [
-          { step: "1", title: "Your customer data, unified", desc: "Your data sources are connected into a coherent customer view — CRM, transactions, interactions, support tickets — creating a single source of truth your whole team can rely on." },
-          { step: "2", title: "Your customer insights, modeled", desc: "Models reveal what your data already knows: customer segments, purchase propensity, churn risk, lifetime value, and next-best actions — tailored to your business context." },
-          { step: "3", title: "Your customer memory, activated", desc: "GenAI-powered customer intelligence gives your team instant context before every meeting, call, or decision. Automated meeting prep and standardized reports — so no insight stays trapped in someone's head." },
-          { step: "4", title: "Your impact, measured and growing", desc: "Insights are integrated into the workflows your team already uses. Dashboards track what moves the needle — so your customer intelligence gets sharper every week." },
+          { step: "1", title: "Your customer data, unified", desc: "Your data sources are connected into a coherent customer view. CRM, transactions, interactions, support tickets. Creating a single source of truth your whole team can rely on." },
+          { step: "2", title: "Your customer insights, modeled", desc: "Models reveal what your data already knows: customer segments, purchase propensity, churn risk, lifetime value, and next-best actions. Tailored to your business context." },
+          { step: "3", title: "Your customer memory, activated", desc: "GenAI-powered customer intelligence gives your team instant context before every meeting, call, or decision. Automated meeting prep and standardized reports. So no insight stays trapped in someone's head." },
+          { step: "4", title: "Your impact, measured and growing", desc: "Insights are integrated into the workflows your team already uses. Dashboards track what moves the needle. So your customer intelligence gets sharper every week." },
         ],
       }}
       results={{
@@ -51,13 +51,13 @@ export default function SolutionCustomerIntelligence() {
             />
           </Reveal>
         </>,
-        footnote: "Also: Konecranes — customer profile design for better sales and marketing targeting.",
+        footnote: "Also: Konecranes. Customer profile design for better sales and marketing targeting.",
       }}
       tools={{
         subtitle: "Your customer intelligence projects move faster because the heavy lifting is already done.",
         children: <>
           <Reveal delay={0.05}>
-            <ToolPreviewCard name="Sales Prospector" description="AI agents that scan LinkedIn, job ads, CRM data, and lead lists to find high-potential prospects. Qualified leads arrive scored, ranked, and ready for outreach — so your sales team talks to the right people from day one." accent={C.lemon} />
+            <ToolPreviewCard name="Sales Prospector" description="AI agents that scan LinkedIn, job ads, CRM data, and lead lists to find high-potential prospects. Qualified leads arrive scored, ranked, and ready for outreach. So your sales team talks to the right people from day one." accent={C.lemon} />
           </Reveal>
         </>,
       }}

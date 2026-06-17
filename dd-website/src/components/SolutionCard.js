@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { C, PILL_BORDER_RADIUS, CARD_BORDER_RADIUS } from "@/lib/tokens";
 import { Reveal } from "@/components/Reveal";
 
-export function SolutionCard({ solution, index }) {
+export function SolutionCard({ solution, index, ctaLabel = "View details" }) {
   const [hovered, setHovered] = useState(false);
   return (
     <Reveal delay={index * 0.05}>
@@ -63,14 +63,14 @@ export function SolutionCard({ solution, index }) {
             </div>
           </div>
 
-          {/* Service name — the big title */}
+          {/* Service name. The big title */}
           <h3 style={{
             fontSize: 28, fontWeight: 500, marginBottom: 20,
             letterSpacing: "-0.015em", lineHeight: 1.2,
             position: "relative", zIndex: 1,
           }}>{solution.tag}</h3>
 
-          {/* Problem — styled as empathetic quote */}
+          {/* Problem. Styled as empathetic quote */}
           <div style={{
             marginBottom: 20, paddingLeft: 16,
             borderLeft: `2px solid ${C.border}`,
@@ -84,7 +84,7 @@ export function SolutionCard({ solution, index }) {
             </p>
           </div>
 
-          {/* Outcome — bold and clear */}
+          {/* Outcome. Bold and clear */}
           <p style={{
             fontSize: 17, lineHeight: 1.55, color: C.black,
             fontWeight: 500, flex: 1,
@@ -100,7 +100,7 @@ export function SolutionCard({ solution, index }) {
             letterSpacing: "0.08em", color: C.black,
             position: "relative", zIndex: 1,
           }}>
-            View details
+            {ctaLabel}
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none"
               style={{ transition: "transform 0.25s ease", transform: hovered ? "translateX(4px)" : "none" }}>
               <path d="M4 8h8M9 5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

@@ -22,24 +22,24 @@ export default function SolutionAINativeTransformation() {
       hero={{
         breadcrumbLabel: "AI-Native Transformation Plan",
         badge: "AI-Native Transformation Plan",
-        title: "We've proven AI works — now how do we make it how our entire company operates?",
-        subtitle: "You've run the pilots, delivered the first wins, and your board is asking what's next. You need a comprehensive plan that takes AI from a handful of projects to the operating model of your organization — across business units, data domains, and decision processes.",
+        title: "We've proven AI works. Now how do we make it how our entire company operates?",
+        subtitle: "You've run the pilots, delivered the first wins, and your board is asking what's next. You need a comprehensive plan that takes AI from a handful of projects to the operating model of your organization. Across business units, data domains, and decision processes.",
       }}
       challenge={{
-        subtitle: "Scaling from a few AI wins to an AI-native organization is a fundamentally different challenge than getting started. The technology is the easy part — the real blockers are people, processes, and how decisions get made.",
+        subtitle: "Scaling from a few AI wins to an AI-native organization is a fundamentally different challenge than getting started. The technology is the easy part. The real blockers are people, processes, and how decisions get made.",
         items: [
-          { title: "AI wins that don't connect into a bigger picture", body: "You have successful pilots and projects, but they're disconnected — different teams, different tools, different approaches. Each one works, but together they don't add up to a transformation. Nobody owns the overall AI capability, and there's no process for deciding what gets built next." },
+          { title: "AI wins that don't connect into a bigger picture", body: "You have successful pilots and projects, but they're disconnected. Different teams, different tools, different approaches. Each one works, but together they don't add up to a transformation. Nobody owns the overall AI capability, and there's no process for deciding what gets built next." },
           { title: "Your organization isn't set up to run AI at scale", body: "Who manages the models after launch? Who decides which processes get automated next? How do you handle the roles that change when AI takes over part of the work? The org chart, decision rights, and ways of working that got you here won't get you to AI-native." },
-          { title: "Foundations that were optional for one project are now blocking ten", body: "Data governance, platform architecture, change management, AI literacy across the business — the things you could work around with one pilot become hard blockers when you try to scale. The technology is ready. Your organization isn't — yet." },
+          { title: "Foundations that were optional for one project are now blocking ten", body: "Data governance, platform architecture, change management, AI literacy across the business. The things you could work around with one pilot become hard blockers when you try to scale. The technology is ready. Your organization isn't. Yet." },
         ],
       }}
       steps={{
-        subtitle: "A comprehensive transformation plan covering four dimensions — technology, data, people, and process. Typically delivered over 8–12 weeks. Because becoming AI-native is an organizational change, not just a technology project.",
+        subtitle: "A comprehensive transformation plan covering four dimensions. Technology, data, people, and process. Typically delivered over 8–12 weeks. Because becoming AI-native is an organizational change, not just a technology project.",
         items: [
-          { step: "1", title: "Your current state, assessed across all four dimensions", desc: "Every AI initiative, data asset, organizational capability, and business process is mapped against the four levels of AI maturity. Technology readiness is only one axis — we assess your people (skills, roles, decision rights), processes (how work flows, where AI fits), and culture (how your organization learns and adapts) with equal rigor. You see exactly where you are — not where you think you are." },
-          { step: "2", title: "Your target operating model, defined", desc: "Together with your leadership team, we define what AI-native looks like for your specific organization — not just which processes AI runs, but how decisions get made, what roles change, how teams collaborate with AI, and what new capabilities you need to build internally. This becomes your north star." },
+          { step: "1", title: "Your current state, assessed across all four dimensions", desc: "Every AI initiative, data asset, organizational capability, and business process is mapped against the four levels of AI maturity. Technology readiness is only one axis. We assess your people (skills, roles, decision rights), processes (how work flows, where AI fits), and culture (how your organization learns and adapts) with equal rigor. You see exactly where you are. Not where you think you are." },
+          { step: "2", title: "Your target operating model, defined", desc: "Together with your leadership team, we define what AI-native looks like for your specific organization. Not just which processes AI runs, but how decisions get made, what roles change, how teams collaborate with AI, and what new capabilities you need to build internally. This becomes your north star." },
           { step: "3", title: "Your transformation plan, built across all dimensions", desc: "A phased roadmap that covers the full picture: which AI solutions to build and when, what data and platform foundations to put in place, how your organization structure and roles evolve, what capabilities to build vs. buy, and how to manage the change so people adopt rather than resist. Each phase proves value before you invest in the next." },
-          { step: "4", title: "Your organization, aligned and funded", desc: "The plan is translated into the language your board needs — investment cases, risk assessment, capability requirements, and clear milestones. But also: what changes for your people, how you'll manage the transition, and who owns what. Your leadership team aligns on the full picture, not just the technology." },
+          { step: "4", title: "Your organization, aligned and funded", desc: "The plan is translated into the language your board needs. Investment cases, risk assessment, capability requirements, and clear milestones. But also: what changes for your people, how you'll manage the transition, and who owns what. Your leadership team aligns on the full picture, not just the technology." },
         ],
       }}
       comparison={{
@@ -77,17 +77,17 @@ export default function SolutionAINativeTransformation() {
         children: <>
           <Reveal delay={0.05}>
             <CaseCard company="Helen" logo="/images/logos/Helen_BW.png" logoHeight={22} tag="Energy"
-              description="Started with an AI Strategy Sprint that secured C-suite approval and funding. Then expanded into a comprehensive program — AI roadmap, data governance aligned to business processes, and data ownership model adopted across the organization. AI went from a pilot initiative to an embedded capability."
+              description="Started with an AI Strategy Sprint that secured C-suite approval and funding. Then expanded into a comprehensive program. AI roadmap, data governance aligned to business processes, and data ownership model adopted across the organization. AI went from a pilot initiative to an embedded capability."
             />
           </Reveal>
           <Reveal delay={0.1}>
             <CaseCard company="Sandvik" logo="/images/logos/Sandvik_BW.png" logoHeight={20} tag="Industrial Manufacturing"
-              description="500+ AI ideas narrowed to 60 high-impact use cases with a clear roadmap for AI-driven growth. Structured evaluation framework the organization continues to use independently — building internal capability to sustain the transformation beyond the engagement."
+              description="500+ AI ideas narrowed to 60 high-impact use cases with a clear roadmap for AI-driven growth. Structured evaluation framework the organization continues to use independently. Building internal capability to sustain the transformation beyond the engagement."
             />
           </Reveal>
           <Reveal delay={0.15}>
             <CaseCard company="Elisa" logo="/images/logos/Elisa_BW.png" logoHeight={22} tag="Telecommunications"
-              description="60+ data product ideas evaluated across 4 business areas. Data strategy with clear ownership and prioritization — connecting individual opportunities into a coherent enterprise-wide plan."
+              description="60+ data product ideas evaluated across 4 business areas. Data strategy with clear ownership and prioritization. Connecting individual opportunities into a coherent enterprise-wide plan."
             />
           </Reveal>
         </>,
@@ -97,12 +97,12 @@ export default function SolutionAINativeTransformation() {
         subtitle: "Your transformation plan builds on proven patterns, not a blank page.",
         children: <>
           <Reveal delay={0.05}>
-            <ToolPreviewCard name="DataDesigner.AI" description="Your AI maturity assessment and opportunity landscape drafted in hours. Maps your business processes to AI opportunities across all four maturity levels — so the engagement time is spent on strategic decisions, not data gathering." accent={C.lemon} />
+            <ToolPreviewCard name="DataDesigner.AI" description="Your AI maturity assessment and opportunity landscape drafted in hours. Maps your business processes to AI opportunities across all four maturity levels. So the engagement time is spent on strategic decisions, not data gathering." accent={C.lemon} />
           </Reveal>
         </>,
       }}
       deliverables={{
-        subtitle: "You move from \"AI works in a few places\" to \"here's exactly how AI becomes how we operate\" — with a plan your board will fund and your organization can execute.",
+        subtitle: "You move from \"AI works in a few places\" to \"here's exactly how AI becomes how we operate\". With a plan your board will fund and your organization can execute.",
         groups: [
           {
             label: "Technology & Data",
@@ -115,9 +115,9 @@ export default function SolutionAINativeTransformation() {
           {
             label: "People & Organization",
             items: [
-              "Target operating model — roles, decision rights, team structures for AI-native operations",
-              "Capability plan — what to build internally, what to hire, what to partner on",
-              "Change management approach — how to bring your people along, not leave them behind",
+              "Target operating model. Roles, decision rights, team structures for AI-native operations",
+              "Capability plan. What to build internally, what to hire, what to partner on",
+              "Change management approach. How to bring your people along, not leave them behind",
             ],
           },
           {
