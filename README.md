@@ -12,7 +12,6 @@ Marketing website for **Data Design Oy** — a Finnish AI advisory & implementat
 - **MDX content** — customer stories and insights authored as bilingual `.mdx` files (`next-mdx-remote` + `gray-matter`)
 - **SEO** — dynamic `sitemap.js` + `robots.js`, per-page metadata, canonical/hreflang
 - Styling: **inline React styles** + a shared token module ([`dd-website/src/lib/tokens.js`](dd-website/src/lib/tokens.js)) + minimal `globals.css`. No CSS modules, no Tailwind.
-- Deployed on **Vercel**.
 
 ## Getting started
 
@@ -36,18 +35,17 @@ npm run start    # serve the production build
 ```
 .
 ├── README.md                 # You are here
-├── dd-website/               # The Next.js app (deployable — Vercel Root Directory)
-│   ├── src/
-│   │   ├── app/              # App Router pages incl. /fi mirror, sitemap.js, robots.js
-│   │   ├── components/       # Shared components (Navbar, Footer, cards, Reveal…)
-│   │   ├── lib/              # tokens.js (brand), mdx.js (content loader), translations.js
-│   │   ├── i18n/             # next-intl config
-│   │   └── middleware.js     # i18n middleware (currently inactive placeholder)
-│   ├── content/              # Bilingual MDX: cases/*.{en,fi}.mdx, insights/*.{en,fi}.mdx
-│   ├── messages/             # next-intl UI strings (en, fi)
-│   ├── public/images/        # Logos, people photos, illustrations
-│   └── next.config.js        # Webflow → new 301 redirects
-└── *.jsx                     # Original standalone prototypes — see note below
+└── dd-website/               # The Next.js app
+    ├── src/
+    │   ├── app/              # App Router pages incl. /fi mirror, sitemap.js, robots.js
+    │   ├── components/       # Shared components (Navbar, Footer, cards, Reveal…)
+    │   ├── lib/              # tokens.js (brand), mdx.js (content loader), translations.js
+    │   ├── i18n/             # next-intl config
+    │   └── middleware.js     # i18n middleware (currently inactive placeholder)
+    ├── content/              # Bilingual MDX: cases/*.{en,fi}.mdx, insights/*.{en,fi}.mdx
+    ├── messages/             # next-intl UI strings (en, fi)
+    ├── public/images/        # Logos, people photos, illustrations
+    └── next.config.js        # Webflow → new 301 redirects
 ```
 
 ### Pages (`dd-website/src/app/`)
@@ -69,16 +67,6 @@ Every route ships in English and Finnish — the Finnish mirror lives under `/fi
 | `/company/careers/senior-data-analyst` | Job posting |
 | `/company/contact` | Contact |
 | `/privacy-policy` | Privacy policy |
-
-### A note on the root-level `.jsx` files
-
-The files at the repo root — [`services-page.jsx`](services-page.jsx), [`home-page.jsx`](home-page.jsx), `solution-*.jsx`, etc. — are the **original single-file prototypes** the project started from. The live implementation has since been built out and componentized under [`dd-website/src/`](dd-website/src/). The prototypes are kept as design reference; **the app in `dd-website/` is the source of truth.**
-
-## Deployment
-
-The app is deployed on Vercel. Because the Next.js project lives in the `dd-website/` subdirectory (not the repo root), the Vercel project's **Root Directory** must be set to `dd-website`.
-
-Set the environment variable **`NEXT_PUBLIC_SITE_URL`** (e.g. `https://www.datadesign.fi`) in Vercel — it drives the canonical URLs, `sitemap.xml`, and `robots.txt`. Legacy Webflow URLs are handled by 301 redirects in `next.config.js`.
 
 ## Contact / brand details
 
