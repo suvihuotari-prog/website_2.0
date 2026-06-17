@@ -40,8 +40,7 @@ npm run start    # serve the production build
     │   ├── app/              # App Router pages incl. /fi mirror, sitemap.js, robots.js
     │   ├── components/       # Shared components (Navbar, Footer, cards, Reveal…)
     │   ├── lib/              # tokens.js (brand), mdx.js (content loader), translations.js
-    │   ├── i18n/             # next-intl config
-    │   └── middleware.js     # i18n middleware (currently inactive placeholder)
+    │   └── i18n/             # next-intl config
     ├── content/              # Bilingual MDX: cases/*.{en,fi}.mdx, insights/*.{en,fi}.mdx
     ├── messages/             # next-intl UI strings (en, fi)
     ├── public/images/        # Logos, people photos, illustrations
